@@ -1,5 +1,6 @@
 package root;
 import interfaces.Input;
+import utils.Utils;
 
 public class Menu implements Input {
 	
@@ -13,14 +14,19 @@ public class Menu implements Input {
 		
 		switch(menu) {
 		
-		case "1": 
+		case "0": 
+				Utils.limparTela();
 				menuInicial(opcaoAnterior);
 				break;
 				
-		case "2": menuAcervo(opcaoAnterior);
+		case "1": 
+			    Utils.limparTela();
+				menuAcervo(opcaoAnterior);
 				break;
 		
-		case "3": menuPessoas(opcaoAnterior);
+		case "2": 
+				Utils.limparTela();
+				menuPessoas(opcaoAnterior);
 				break;
 				
 		}
@@ -39,7 +45,7 @@ public class Menu implements Input {
 		
 		//Limpar tela
 		
-		String opcao = s.next();
+		
 		
 		System.out.println("Menu Acervo \n"+
 						"\n 1 - Cadastrar"+
@@ -49,12 +55,19 @@ public class Menu implements Input {
 						"\n [v] - Voltar"
 				);
 		
+		String opcao = s.next();
+		
 		switch(opcao) {
 		
-		case "1":
+		case "v":
 				
-		
-		
+				if(opcaoAnterior=="0") {
+					opcao="0";
+				}
+			
+				renderizar(opcao, opcaoAnterior);
+				break;
+					
 		}
 		
 	}
@@ -64,6 +77,21 @@ public class Menu implements Input {
 		System.out.println("Menu Pessoas \n"+
 						"\n [v] - Voltar"
 				);
+		
+		String opcao = s.next();
+		
+		switch(opcao) {
+		
+		case "v":
+				
+				if(opcaoAnterior=="0") {
+					opcao="0";
+				}
+			
+				renderizar(opcao, opcaoAnterior);
+				break;
+					
+		}
 		
 		
 	}

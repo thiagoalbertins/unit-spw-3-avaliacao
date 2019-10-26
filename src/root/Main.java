@@ -6,13 +6,13 @@ public class Main implements Input {
 	public static void main(String[] args) {
 		
 		String opcao;
-		String opcaoAnterior;
+		String opcaoAnterior = "0";
 		
-		Menu.renderizar("1", "1");
+		Menu.renderizar("0", opcaoAnterior);
 		
 		opcao = s.next();
 		
-		Menu.renderizar(opcao, "1");
+		Menu.renderizar(opcao, opcaoAnterior);
 		
 
 	}
