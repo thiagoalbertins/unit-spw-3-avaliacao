@@ -1,5 +1,7 @@
 package root;
 
+import java.util.Scanner;
+
 public class Menu {
 	
 	//1-Menu inicial
@@ -10,9 +12,13 @@ public class Menu {
 	
 	public static void renderizar(String i) {
 		
+		String opcaoAnterior;
+		
 		switch(i) {
 		
-		case "1": menuInicial();
+		case "1": 
+				opcaoAnterior = i;
+				menuInicial();
 				break;
 				
 		case "2": menuAcervo();
@@ -26,7 +32,7 @@ public class Menu {
 	}
 	
 	
-	public static void menuInicial() {
+	public static void menuInicial(String opcaoAnterior) {
 		
 		System.out.println("Sistema Biblioteca \n"+
 						"\n 1 - Acervo"+
@@ -34,19 +40,36 @@ public class Menu {
 				);
 	}
 	
-	public static void menuAcervo() {
+	public static void menuAcervo(String opcaoAnterior, Scanner s) {
+		
+		//Limpar tela
+		
+		String opcao = s.next();
 		
 		System.out.println("Menu Acervo \n"+
+						"\n 1 - Cadastrar"+
+						"\n 2 - Listar"+
+						"\n 3 - Atualizar"+
+						"\n 4 - Remover"+
 						"\n [v] - Voltar"
 				);
 		
+		switch(opcao) {
+		
+		case "1":
+				
+		
+		
+		}
+		
 	}
 	
-	public static void menuPessoas() {
+	public static void menuPessoas(String opcaoAnterior) {
 		
 		System.out.println("Menu Pessoas \n"+
 						"\n [v] - Voltar"
 				);
+		
 		
 	}
 	
