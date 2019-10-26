@@ -1,6 +1,6 @@
 package gestaoDePessoa;
 
-public class Pessoa {
+public abstract class Pessoa {
 	
 	String nome, cpf, fone, endereco, cep, email;
 	//Emprestimo listaEmprestimos;
