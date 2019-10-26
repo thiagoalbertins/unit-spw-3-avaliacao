@@ -18,7 +18,7 @@ public abstract class Pessoa {
 		this.endereco = endereco;
 		this.cep = cep;
 		this.email = email;
-		this.id = PessoaCollection.tamanhoLista()+1;
+		this.id = PessoaCollection.ultimoId()+1;
 	}
 	
 	//Getters and Setters
@@ -70,5 +70,15 @@ public abstract class Pessoa {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
 
 }
