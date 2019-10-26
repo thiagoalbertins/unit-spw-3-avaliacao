@@ -2,14 +2,16 @@ package gestaoDeAcervo;
 
 public abstract class Acervo {
 
-	private int codigo, anoPublicacao, numeroPaginas;
+	private int codigo, anoPublicacao, numeroPaginas, tipo;
 	private String volume;
 
-	Acervo(int c, int aP, int nP, String v) {
-		this.codigo = c;
-		this.anoPublicacao = aP;
-		this.numeroPaginas = nP;
-		this.volume = v;
+	public Acervo(int codigo, int anoPublicacao, int numeroPaginas, int tipo, String volume) {
+		super();
+		this.codigo = codigo;
+		this.anoPublicacao = anoPublicacao;
+		this.numeroPaginas = numeroPaginas;
+		this.tipo = tipo;
+		this.volume = volume;
 	}
 
 	public int getCodigo() {
@@ -36,6 +38,14 @@ public abstract class Acervo {
 		this.numeroPaginas = numeroPaginas;
 	}
 
+	public int getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
 	public String getVolume() {
 		return volume;
 	}
@@ -43,5 +53,6 @@ public abstract class Acervo {
 	public void setVolume(String volume) {
 		this.volume = volume;
 	}
+
 
 }

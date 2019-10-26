@@ -5,7 +5,8 @@ import gestaoDeAcervo.Acervo;
 
 public class AcervoCollection {
 	
-	ArrayList<Acervo> acervos = new ArrayList<>();
+	ArrayList<Acervo> acervo = new ArrayList<>();
+	
 	
 	//Criar CRUD para acervo
 	

@@ -1,12 +1,13 @@
 package gestaoDeAcervo;
 
-public class Jornal extends Acervo{
+public class Jornal extends Acervo {
 
 	private int edicao;
 	private String nomeRevista;
-	
-	public Jornal(int c, int aP, int nP, String v, int edicao, String nomeRevista) {
-		super(c, aP, nP, v);
+
+	public Jornal(int codigo, int anoPublicacao, int numeroPaginas, int tipo, String volume, int edicao,
+			String nomeRevista) {
+		super(codigo, anoPublicacao, numeroPaginas, tipo, volume);
 		this.edicao = edicao;
 		this.nomeRevista = nomeRevista;
 	}
