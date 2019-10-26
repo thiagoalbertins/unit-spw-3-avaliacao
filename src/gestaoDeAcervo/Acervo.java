@@ -1,17 +1,17 @@
 package gestaoDeAcervo;
+import collections.AcervoCollection;
 
 public abstract class Acervo {
 
 	private int codigo, anoPublicacao, numeroPaginas, tipo;
 	private String volume;
 
-	public Acervo(int codigo, int anoPublicacao, int numeroPaginas, int tipo, String volume) {
-		super();
-		this.codigo = codigo;
+	public Acervo(int anoPublicacao, int numeroPaginas, int tipo, String volume) {
 		this.anoPublicacao = anoPublicacao;
 		this.numeroPaginas = numeroPaginas;
 		this.tipo = tipo;
 		this.volume = volume;
+		this.codigo = AcervoCollection.ultimoCodigo() + 1;   //adicionar metodo de codigo (id) do acervo
 	}
 
 	public int getCodigo() {
