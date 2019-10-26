@@ -1,8 +1,7 @@
 package root;
+import interfaces.Input;
 
-import java.util.Scanner;
-
-public class Menu {
+public class Menu implements Input {
 	
 	//1-Menu inicial
 	//2-Acervo
@@ -10,27 +9,23 @@ public class Menu {
 	
 	int id;
 	
-	public static void renderizar(String i) {
+	public static void renderizar(String menu, String opcaoAnterior) {
 		
-		String opcaoAnterior;
-		
-		switch(i) {
+		switch(menu) {
 		
 		case "1": 
-				opcaoAnterior = i;
-				menuInicial();
+				menuInicial(opcaoAnterior);
 				break;
 				
-		case "2": menuAcervo();
+		case "2": menuAcervo(opcaoAnterior);
 				break;
 		
-		case "3": menuPessoas();
+		case "3": menuPessoas(opcaoAnterior);
 				break;
 				
 		}
 		
 	}
-	
 	
 	public static void menuInicial(String opcaoAnterior) {
 		
@@ -40,7 +35,7 @@ public class Menu {
 				);
 	}
 	
-	public static void menuAcervo(String opcaoAnterior, Scanner s) {
+	public static void menuAcervo(String opcaoAnterior) {
 		
 		//Limpar tela
 		

@@ -1,20 +1,18 @@
 package root;
+import interfaces.Input;
 
-import java.util.Scanner;
-
-public class Main {
+public class Main implements Input {
 
 	public static void main(String[] args) {
 		
 		String opcao;
+		String opcaoAnterior;
 		
-		Scanner s = new Scanner(System.in);
-		
-		Menu.menuInicial();
+		Menu.renderizar("1", "1");
 		
 		opcao = s.next();
 		
-		Menu.renderizar(opcao);
+		Menu.renderizar(opcao, "1");
 		
 
 	}
