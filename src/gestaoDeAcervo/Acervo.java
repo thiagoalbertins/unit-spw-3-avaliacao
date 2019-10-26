@@ -1,9 +1,9 @@
 package gestaoDeAcervo;
 
-public class Acervo {
+public abstract class Acervo {
 
-	int codigo, anoPublicacao, numeroPaginas;
-	String volume;
+	private int codigo, anoPublicacao, numeroPaginas;
+	private String volume;
 
 	Acervo(int c, int aP, int nP, String v) {
 		this.codigo = c;
