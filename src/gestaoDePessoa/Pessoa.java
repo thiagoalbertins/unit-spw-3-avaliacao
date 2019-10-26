@@ -2,8 +2,22 @@ package gestaoDePessoa;
 
 public abstract class Pessoa {
 	
-	String nome, cpf, fone, endereco, cep, email;
+	private String nome, cpf, fone, endereco, cep, email;
 	//Emprestimo listaEmprestimos;
+	
+	//Construtor
+	
+	public Pessoa(String nome, String cpf, String fone, String endereco, String cep, String email) {
+		super();
+		this.nome = nome;
+		this.cpf = cpf;
+		this.fone = fone;
+		this.endereco = endereco;
+		this.cep = cep;
+		this.email = email;
+	}
+	
+	//Getters and Setters
 	
 	public String getNome() {
 		return nome;
