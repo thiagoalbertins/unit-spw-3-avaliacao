@@ -1,4 +1,4 @@
-package gestaoPessoa;
+package gestaoDePessoa;
 
 public class Atendente {
 

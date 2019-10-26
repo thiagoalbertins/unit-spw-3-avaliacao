@@ -1,4 +1,4 @@
-package gestaoAcervo;
+package gestaoDeAcervo;
 
 public class Livro {
 
