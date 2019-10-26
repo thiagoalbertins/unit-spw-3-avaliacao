@@ -1,8 +1,11 @@
 package gestaoDePessoa;
 
+import collections.PessoaCollection;
+
 public abstract class Pessoa {
 	
 	private String nome, cpf, fone, endereco, cep, email;
+	int id;
 	//Emprestimo listaEmprestimos;
 	
 	//Construtor
@@ -15,6 +18,7 @@ public abstract class Pessoa {
 		this.endereco = endereco;
 		this.cep = cep;
 		this.email = email;
+		this.id = PessoaCollection.tamanhoLista()+1;
 	}
 	
 	//Getters and Setters
