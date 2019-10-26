@@ -46,14 +46,8 @@ public class PessoaCollection {
 	
 	public static int ultimoId() {
 		
-		int ultimoId=0;
+		int ultimoId = pessoas.get(tamanhoLista()-1).getId();
 		
-		for (int i = 0; i<tamanhoLista(); i++) {
-			if(pessoas.get(i).getId()>ultimoId) {
-				ultimoId = pessoas.get(i).getId();
-			}
-			
-		}
 		return ultimoId;
 	}
 }
