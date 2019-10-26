@@ -2,7 +2,7 @@ package gestaoDePessoa;
 
 public class Atendente extends Pessoa {
 	
-	int identificador;
+	private int identificador;
 	
 	public Atendente(String nome, String cpf, String fone, String endereco, String cep, String email, int identificador) {
 		super(nome, cpf, fone, endereco, cep, email);
