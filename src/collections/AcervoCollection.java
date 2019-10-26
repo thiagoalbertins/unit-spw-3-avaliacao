@@ -19,12 +19,35 @@ public class AcervoCollection {
 
 	}
 
-	public static int getTamanho() {
+	public static int getTamanhoAcervo() {
 		return acervo.size();
 	}
 
 	public static int ultimoCodigo() {
-		int ultimoCodigo = acervo.get((getTamanho() - 1)).getCodigo();
+		int ultimoCodigo = acervo.get((getTamanhoAcervo() - 1)).getCodigo();
 		return ultimoCodigo;
+	}
+	
+	public static void listarAcervo() {
+		
+		for (int i=0 ; i < acervo.size() ; i++) {
+			
+			if (acervo.get(i).getTipo() == 1) { // falta modificação
+			
+				System.out.println("Acervo Cadastrado:/n" + acervo.get(i).getCodigo() + " - Cliente: " + listaTodosPedidos.get(i).cliente + " || "
+					+ listaTodosPedidos.get(i).bebida.descricao + ", " + listaTodosPedidos.get(i).entrada.descricao
+					+ ", " + listaTodosPedidos.get(i).prato_principal.descricao + " e "
+					+ listaTodosPedidos.get(i).sobremesa.descricao + "|| Valor total R$" + listaTodosPedidos.get(i).valor));	
+			}
+			else if( acervo.get(i).getTipo() == 2) {
+				
+			}
+			
+			else if(acervo.get(i).getTipo() == 3) {
+				
+			}
+			else
+			
+		}
 	}
 }
