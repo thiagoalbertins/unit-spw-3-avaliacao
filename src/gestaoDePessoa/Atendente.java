@@ -5,7 +5,7 @@ public class Atendente extends Pessoa {
 	private int identificador;
 	
 	public Atendente(String nome, String cpf, String fone, String endereco, String cep, String email, int identificador) {
-		super(nome, cpf, fone, endereco, cep, email);
+		super(nome, cpf, fone, endereco, cep, email, 1);
 		this.identificador = identificador;
 	}
 

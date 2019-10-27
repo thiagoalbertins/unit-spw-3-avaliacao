@@ -18,7 +18,7 @@ public class Menu implements Input {
 		//2-4 Deletar pessoas
 	
 	
-	//Render
+	//Render -> Método público responsável por renderizar os menus
 	
 	public static void renderizar(String menu, String opcaoAnterior) {
 		
@@ -45,7 +45,7 @@ public class Menu implements Input {
 	
 	//Início
 	
-	public static void menuInicial(String opcaoAnterior) {
+	private static void menuInicial(String opcaoAnterior) {
 		
 		String opcao;
 		
@@ -63,7 +63,7 @@ public class Menu implements Input {
 	
 	//Acervo
 	
-	public static void menuAcervo(String opcaoAnterior) {
+	private static void menuAcervo(String opcaoAnterior) {
 				
 		System.out.println("Menu Acervo \n\n\n"+
 						"\n 1 - Cadastrar"+
@@ -92,7 +92,7 @@ public class Menu implements Input {
 	
 	//Pessoas
 	
-	public static void menuPessoas(String opcaoAnterior) {
+	private static void menuPessoas(String opcaoAnterior) {
 		
 		System.out.println("Menu Pessoas \n\n\n"+
 						"\n 1 - Cadastrar"+
@@ -113,12 +113,41 @@ public class Menu implements Input {
 				}
 			
 				renderizar(opcao, opcaoAnterior);
-				break;
-					
-		}
-		
+				break;		
+				
+		}	
 		
 	}
 	
-
+	private static void menuCadastroPessoas(String opcaoAnterior) {
+		
+		System.out.println("Cadastro de pessoas \n\n\n" + 
+						"Escolha o tipo de pessoa: " +
+						"\n 1 - Antendente" +
+						"\n 2 - Usuário"+
+						"\n\n [v] - Voltar"
+				);
+		
+		String opcao = s.next();
+		
+		switch(opcao) {
+		
+		case "1":
+			
+			
+		
+		case "v":
+			
+			if(opcaoAnterior=="0") {
+				opcao="0";
+			}
+			renderizar(opcao, opcaoAnterior);
+			break;		
+			
+		}
+			
+	}
+	
 }
+	
+

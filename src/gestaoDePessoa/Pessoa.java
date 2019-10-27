@@ -5,12 +5,12 @@ import collections.PessoaCollection;
 public abstract class Pessoa {
 	
 	private String nome, cpf, fone, endereco, cep, email;
-	int id;
+	int id, tipo;
 	//Emprestimo listaEmprestimos;
 	
 	//Construtor
 	
-	public Pessoa(String nome, String cpf, String fone, String endereco, String cep, String email) {
+	public Pessoa(String nome, String cpf, String fone, String endereco, String cep, String email, int tipo) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
