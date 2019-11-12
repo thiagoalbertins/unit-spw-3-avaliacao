@@ -27,32 +27,22 @@ public class AcervoCollection {
 		if (acervo.size() == 0) {
 			return 0;
 		} else {
-			
+
 			int ultimoCodigo = acervo.get((getTamanhoAcervo() - 1)).getCodigo();
-			return ultimoCodigo;			
+			return ultimoCodigo;
 		}
 	}
-	
-	public static void listarAcervo() {
-		
-		for (int i=0 ; i < acervo.size() ; i++) {
-			
-			if (acervo.get(i).getTipo() == 1) { // falta modifica��o
-			
-				System.out.println("Acervo Cadastrado:/n" + acervo.get(i).getCodigo() + " - Cliente: " + listaTodosPedidos.get(i).cliente + " || "
-					+ listaTodosPedidos.get(i).bebida.descricao + ", " + listaTodosPedidos.get(i).entrada.descricao
-					+ ", " + listaTodosPedidos.get(i).prato_principal.descricao + " e "
-					+ listaTodosPedidos.get(i).sobremesa.descricao + "|| Valor total R$" + listaTodosPedidos.get(i).valor));	
+
+	public static void listarAcervo(int tipo) {
+
+		for (int i = 0; i < acervo.size(); i++) {
+			if (tipo == 0) {
+				System.out.println(acervo.get(i).getTipo());
+			} else {
+				if (acervo.get(i).getTipo() == tipo) {
+					System.out.println(acervo.get(i).getTipo());
+				}
 			}
-			else if( acervo.get(i).getTipo() == 2) {
-				
-			}
-			
-			else if(acervo.get(i).getTipo() == 3) {
-				
-			}
-			else
-			
 		}
 	}
 }

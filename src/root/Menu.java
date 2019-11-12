@@ -23,7 +23,17 @@ public class Menu implements Input {
 	// 2-4 Deletar pessoas
 
 	// Render -> Método público responsável por renderizar os menus
-
+	
+	public static void voltar(String opcaoAnterior) {
+		
+		System.out.println("\n Pressione [v] para voltar ao menu anterior");
+		
+		String voltar = s.next();
+		if (voltar.equals("v")) {
+			renderizar(opcaoAnterior, opcaoAnterior);
+		};	
+	}
+	
 	public static void renderizar(String menu, String opcaoAnterior) {
 
 		switch (menu) {
@@ -71,7 +81,9 @@ public class Menu implements Input {
 		String opcao = s.next();
 
 		switch (opcao) {
-
+		
+		//Cadastro de itens no acervo
+		
 		case "1": {
 
 			System.out.println("Escolha o que cadastrar:" + "\n 1 - Jornal" + "\n 2 - Livro" + "\n 3 - Revista");
@@ -140,6 +152,9 @@ public class Menu implements Input {
 				AcervoCollection.adicionarAcervo(l);
 
 				Menu.renderizar("1", opcaoAnterior);
+				
+				break;
+				
 			}
 
 			case "3":{
@@ -160,9 +175,27 @@ public class Menu implements Input {
 				AcervoCollection.adicionarAcervo(r);
 
 				Menu.renderizar("1", opcaoAnterior);
+				
+				break;
 
+				}
+			
 			}
-
+		}
+		
+		//Listar itens do acervo
+			
+		case "2":{
+			
+			System.out.println("\n 0 - Listar todos os itens \n 1 - Listar jornais \n 2 - Listar livros \n 3 - Listar revistas");
+			
+			int tipo = s.nextInt();
+			AcervoCollection.listarAcervo(tipo);
+			voltar(opcaoAnterior);
+			break;
+			
+		}
+			
 		case "v": {
 
 			if (opcaoAnterior == "0") {
@@ -173,12 +206,10 @@ public class Menu implements Input {
 			break;
 		}
 			
-			}
-			
-		}
 	}
-		
+			
 }
+
 	// Pessoas
 
 	private static void menuPessoas(String opcaoAnterior) {
