@@ -1,23 +1,15 @@
 package gestaoDeAcervo;
 
+import collections.AcervoCollection;
+
 public class Jornal extends Acervo {
 
-	private int edicao;
 	private String nomeJornal;
 
-
-	public Jornal(int anoPublicacao, int numeroPaginas, String volume, int edicao, String nomeJornal) {
+	public Jornal(int anoPublicacao, int numeroPaginas, String volume, String nomeJornal) {
 		super(anoPublicacao, numeroPaginas, 1, volume);
-		this.edicao = edicao;
 		this.nomeJornal = nomeJornal;
-	}
-
-	public int getEdicao() {
-		return edicao;
-	}
-
-	public void setEdicao(int edicao) {
-		this.edicao = edicao;
+		setCodigo(AcervoCollection.ultimoCodigo() + 1); //necessita verificação
 	}
 
 	public String getNomeJornal() {
