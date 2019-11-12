@@ -5,15 +5,16 @@ public class Livro extends Acervo {
 	private int codigoAutor, edicao;
 	private String nomeAutor, titulo, editora, isbn;
 
-	public Livro(int codigo, int anoPublicacao, int numeroPaginas, int tipo, String volume, int codigoAutor, int edicao,// falta tipo
-			String nomeAutor, String titulo, String editora, String isbn) {
-		super(codigo, anoPublicacao, numeroPaginas, volume);
+	public Livro(int anoPublicacao, int numeroPaginas, String volume, int codigoAutor, int edicao, String nomeAutor, String titulo, String editora, String isbn) {
+		super(anoPublicacao, numeroPaginas, 2, volume);
+		
 		this.codigoAutor = codigoAutor;
 		this.edicao = edicao;
 		this.nomeAutor = nomeAutor;
 		this.titulo = titulo;
 		this.editora = editora;
 		this.isbn = isbn;
+		
 	}
 
 	public int getCodigoAutor() {
