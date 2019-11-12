@@ -11,7 +11,7 @@ public abstract class Acervo {
 		this.numeroPaginas = numeroPaginas;
 		this.tipo = tipo;
 		this.volume = volume;
-		this.codigo = AcervoCollection.ultimoCodigo() + 1;
+		this.codigo = AcervoCollection.ultimoCodigo() + 1; //verificar
 	}
 
 	public int getCodigo() {

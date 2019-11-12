@@ -1,5 +1,7 @@
 package gestaoDeAcervo;
 
+import collections.AcervoCollection;
+
 public class Livro extends Acervo {
 
 	private int codigoAutor, edicao;
@@ -14,6 +16,7 @@ public class Livro extends Acervo {
 		this.titulo = titulo;
 		this.editora = editora;
 		this.isbn = isbn;
+		setCodigo(AcervoCollection.ultimoCodigo() + 1); //verificar
 		
 	}
 
