@@ -5,9 +5,8 @@ public class Revista extends Acervo {
 	private int edicao;
 	private String nomeRevista;
 
-	public Revista(int codigo, int anoPublicacao, int numeroPaginas, int tipo, String volume, int edicao, // falta tipo
-			String nomeRevista) {
-		super(codigo, anoPublicacao, numeroPaginas, volume);
+	public Revista(int anoPublicacao, int numeroPaginas, String volume, int edicao, String nomeRevista) {
+		super(anoPublicacao, numeroPaginas, 3, volume);
 		this.edicao = edicao;
 		this.nomeRevista = nomeRevista;
 	}

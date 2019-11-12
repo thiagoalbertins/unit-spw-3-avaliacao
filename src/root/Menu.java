@@ -3,6 +3,7 @@ package root;
 import collections.AcervoCollection;
 import gestaoDeAcervo.Jornal;
 import gestaoDeAcervo.Livro;
+import gestaoDeAcervo.Revista;
 import interfaces.Input;
 import utils.Utils;
 
@@ -151,12 +152,12 @@ public class Menu implements Input {
 				String volume = s.next();
 				System.out.println("Número da edição: ");
 				int edicao = s.nextInt();
-				System.out.println("Nome do jornal: ");
-				String nomeJornal = s.next();
+				System.out.println("Nome da revista: ");
+				String nomeRevista = s.next();
+				
+				Revista r = new Revista(anoPublicacao, numeroPaginas, volume, edicao, nomeRevista);
 
-				Jornal j = new Jornal(anoPublicacao, numeroPaginas, volume, edicao, nomeJornal);
-
-				AcervoCollection.adicionarAcervo(j);
+				AcervoCollection.adicionarAcervo(r);
 
 				Menu.renderizar("1", opcaoAnterior);
 
