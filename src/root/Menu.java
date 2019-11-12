@@ -104,6 +104,7 @@ public class Menu implements Input {
 
 				break;
 			}
+			
 			case "2": {
 
 				System.out.println("Ano de publicação do livro: ");

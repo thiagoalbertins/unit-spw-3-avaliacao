@@ -24,8 +24,13 @@ public class AcervoCollection {
 	}
 
 	public static int ultimoCodigo() {
-		int ultimoCodigo = acervo.get((getTamanhoAcervo() - 1)).getCodigo();
-		return ultimoCodigo;
+		if (acervo.size() == 0) {
+			return 0;
+		} else {
+			
+			int ultimoCodigo = acervo.get((getTamanhoAcervo() - 1)).getCodigo();
+			return ultimoCodigo;			
+		}
 	}
 	
 	public static void listarAcervo() {
