@@ -3,13 +3,13 @@ package gestaoDeAcervo;
 public class Jornal extends Acervo {
 
 	private int edicao;
-	private String nomeRevista;
+	private String nomeJornal;
 
 
-	public Jornal(int anoPublicacao, int numeroPaginas, String volume, int edicao, String nomeRevista) {
+	public Jornal(int anoPublicacao, int numeroPaginas, String volume, int edicao, String nomeJornal) {
 		super(anoPublicacao, numeroPaginas, 1, volume);
 		this.edicao = edicao;
-		this.nomeRevista = nomeRevista;
+		this.nomeJornal = nomeJornal;
 	}
 
 	public int getEdicao() {
@@ -20,11 +20,11 @@ public class Jornal extends Acervo {
 		this.edicao = edicao;
 	}
 
-	public String getNomeRevista() {
-		return nomeRevista;
+	public String getNomeJornal() {
+		return nomeJornal;
 	}
 
-	public void setNomeRevista(String nomeRevista) {
-		this.nomeRevista = nomeRevista;
+	public void setNomeJornal(String nomeJornal) {
+		this.nomeJornal = nomeJornal;
 	}
 }

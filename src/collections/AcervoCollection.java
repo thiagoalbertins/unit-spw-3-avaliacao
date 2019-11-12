@@ -7,7 +7,7 @@ public class AcervoCollection {
 
 	private static ArrayList<Acervo> acervo = new ArrayList<>();
 
-	public void adicionarAcervo(Acervo a) {
+	public static void adicionarAcervo(Acervo a) {
 		acervo.add(a);
 	}
 
@@ -32,7 +32,7 @@ public class AcervoCollection {
 		
 		for (int i=0 ; i < acervo.size() ; i++) {
 			
-			if (acervo.get(i).getTipo() == 1) { // falta modificação
+			if (acervo.get(i).getTipo() == 1) { // falta modificaï¿½ï¿½o
 			
 				System.out.println("Acervo Cadastrado:/n" + acervo.get(i).getCodigo() + " - Cliente: " + listaTodosPedidos.get(i).cliente + " || "
 					+ listaTodosPedidos.get(i).bebida.descricao + ", " + listaTodosPedidos.get(i).entrada.descricao

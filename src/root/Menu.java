@@ -1,4 +1,6 @@
 package root;
+import collections.AcervoCollection;
+import gestaoDeAcervo.Jornal;
 import interfaces.Input;
 import utils.Utils;
 
@@ -76,6 +78,80 @@ public class Menu implements Input {
 		String opcao = s.next();
 		
 		switch(opcao) {
+		
+		case "1":
+				
+				System.out.println("Escolha o que cadastrar:"
+						+ "\n 1 - Jornal"
+						+ "\n 2 - Livro"
+						+ "\n 3 - Revista");
+				
+				String opcaoCadastro = s.next();
+				
+				switch(opcaoCadastro) {
+				
+				case "1":
+					
+					System.out.println("Ano de publicação: ");
+					int anoPublicacao = s.nextInt();
+					System.out.println("Número de páginas: ");
+					int numeroPaginas = s.nextInt();
+					System.out.println("Volume: ");
+					String volume = s.next();
+					System.out.println("Número da edição: ");
+					int edicao = s.nextInt();
+					System.out.println("Nome do jornal: ");
+					String nomeJornal = s.next();
+					
+					Jornal j  = new Jornal(anoPublicacao, numeroPaginas, volume, edicao, nomeJornal);
+					
+					AcervoCollection.adicionarAcervo(j);
+					
+					Menu.renderizar("1", opcaoAnterior);
+					
+					break;
+					
+				case "2":
+					
+					System.out.println("Codigo do livro: ");
+					int codigo = s.nextInt();
+					System.out.println("Número de páginas: ");
+					int numeroPaginas = s.nextInt();
+					System.out.println("Volume: ");
+					String volume = s.next();
+					System.out.println("Número da edição: ");
+					int edicao = s.nextInt();
+					System.out.println("Nome do jornal: ");
+					String nomeJornal = s.next();
+					
+					Jornal j  = new Jornal(anoPublicacao, numeroPaginas, volume, edicao, nomeJornal);
+					
+					AcervoCollection.adicionarAcervo(j);
+					
+					Menu.renderizar("1", opcaoAnterior);
+					
+				case "3":
+					
+					System.out.println("Ano de publicação: ");
+					int anoPublicacao = s.nextInt();
+					System.out.println("Número de páginas: ");
+					int numeroPaginas = s.nextInt();
+					System.out.println("Volume: ");
+					String volume = s.next();
+					System.out.println("Número da edição: ");
+					int edicao = s.nextInt();
+					System.out.println("Nome do jornal: ");
+					String nomeJornal = s.next();
+					
+					Jornal j  = new Jornal(anoPublicacao, numeroPaginas, volume, edicao, nomeJornal);
+					
+					AcervoCollection.adicionarAcervo(j);
+					
+					Menu.renderizar("1", opcaoAnterior);
+					
+				}
+				
+				
 		
 		case "v":
 				
