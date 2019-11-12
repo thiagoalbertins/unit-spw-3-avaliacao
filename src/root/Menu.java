@@ -71,7 +71,7 @@ public class Menu implements Input {
 
 		switch (opcao) {
 
-		case "1":
+		case "1": {
 
 			System.out.println("Escolha o que cadastrar:" + "\n 1 - Jornal" + "\n 2 - Livro" + "\n 3 - Revista");
 
@@ -141,7 +141,7 @@ public class Menu implements Input {
 				Menu.renderizar("1", opcaoAnterior);
 			}
 
-			case "3":
+			case "3":{
 
 				System.out.println("Ano de publicação: ");
 				int anoPublicacao = s.nextInt();
@@ -162,7 +162,7 @@ public class Menu implements Input {
 
 			}
 
-		case "v":
+		case "v": {
 
 			if (opcaoAnterior == "0") {
 				opcao = "0";
@@ -170,11 +170,14 @@ public class Menu implements Input {
 
 			renderizar(opcao, opcaoAnterior);
 			break;
-
 		}
-
+			
+			}
+			
+		}
 	}
-
+		
+}
 	// Pessoas
 
 	private static void menuPessoas(String opcaoAnterior) {
