@@ -26,5 +26,13 @@ public class Revista extends Acervo {
 	public void setNomeRevista(String nomeRevista) {
 		this.nomeRevista = nomeRevista;
 	}
+	
+	public void listarTudo() {
+		System.out.println(nomeRevista + ", "
+				 + edicao + ", "
+				 + getAnoPublicacao()  + ", "
+				 + getNumeroPaginas()  + ", "
+				 + getVolume() + ", ");
+	}
 
 }

@@ -27,4 +27,13 @@ public class Jornal extends Acervo {
 	public void setNomeJornal(String nomeJornal) {
 		this.nomeJornal = nomeJornal;
 	}
+	
+	public void listarTudo() {
+		System.out.println(nomeJornal + ", "
+				 + edicao + ", "
+				 + getAnoPublicacao()  + ", "
+				 + getNumeroPaginas()  + ", "
+				 + getVolume() + ", ");
+	}
+	
 }

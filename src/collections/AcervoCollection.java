@@ -1,11 +1,16 @@
 package collections;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import gestaoDeAcervo.Acervo;
+import gestaoDeAcervo.Jornal;
+import gestaoDeAcervo.Livro;
+import gestaoDeAcervo.Revista;
 
 public class AcervoCollection {
 
-	private static ArrayList<Acervo> acervo = new ArrayList<>();
+	private static List<Acervo> acervo = new ArrayList<>();
 
 	public static void adicionarAcervo(Acervo a) {
 		acervo.add(a);
@@ -40,9 +45,29 @@ public class AcervoCollection {
 				System.out.println(acervo.get(i).getTipo());
 			} else {
 				if (acervo.get(i).getTipo() == tipo) {
-					System.out.println(acervo.get(i).getTipo());
+					selecionador(tipo, i);
 				}
 			}
 		}
 	}
+	
+	private static void selecionador(int tipo, int i) {
+		
+		switch(tipo) {		
+		case 1:
+			((Jornal) acervo.get(i)).listarTudo();
+			break;
+			
+		case 2:
+			((Livro) acervo.get(i)).listarTudo();
+			break;
+			
+		case 3:
+			((Revista) acervo.get(i)).listarTudo();
+			break;
+		}	
+		
+	}
+	
+	
 }

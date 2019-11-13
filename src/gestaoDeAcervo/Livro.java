@@ -64,5 +64,16 @@ public class Livro extends Acervo {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
+	
+	public void listarTudo() {
+		System.out.println(nomeAutor + ", "
+				 + titulo  + ", "
+				 + editora + ", "
+				 + edicao + ", "
+				 + getAnoPublicacao()  + ", "
+				 + getNumeroPaginas()  + ", "
+				 + getVolume() + ", ");
+	}
+	
 
 }
