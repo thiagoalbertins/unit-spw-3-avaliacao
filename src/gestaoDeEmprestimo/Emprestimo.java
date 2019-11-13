@@ -1,6 +1,6 @@
 package gestaoDeEmprestimo;
 
-import java.util.Date;
+import java.time.*;
 import gestaoDePessoa.Usuario;
 import gestaoDeAcervo.Acervo;
 
@@ -9,14 +9,14 @@ public class Emprestimo {
 	private Usuario usuario;
 	private Acervo acervo;
 	private String status;
-	private Date data;
+	private LocalDate data;
 	
-	public Emprestimo(Usuario usuario, Acervo acervo, String status, Date data) {
+	public Emprestimo(Usuario usuario, Acervo acervo, String status, LocalDate data) {
 		super();
 		this.usuario = usuario;
 		this.acervo = acervo;
 		this.status = status;
-		this.data = data;
+		this.data = LocalDate.now();
 	}
 
 	public Usuario getUsuario() {
@@ -43,11 +43,11 @@ public class Emprestimo {
 		this.status = status;
 	}
 
-	public Date getData() {
+	public LocalDate getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(LocalDate data) {
 		this.data = data;
 	}
 
