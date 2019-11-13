@@ -3,7 +3,6 @@ package collections;
 import java.util.ArrayList;
 import java.util.List;
 
-import gestaoDeAcervo.Acervo;
 import gestaoDeEmprestimo.*;
 
 public class EmprestimoCollection {
