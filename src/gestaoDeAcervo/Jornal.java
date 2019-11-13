@@ -1,8 +1,5 @@
 package gestaoDeAcervo;
 
-import collections.AcervoCollection;
-import root.Menu;
-
 public class Jornal extends Acervo implements interfaces.Input {
 
 	private String nomeJornal;
@@ -23,10 +20,10 @@ public class Jornal extends Acervo implements interfaces.Input {
 	
 	public void listarTudo() {
 		System.out.println("Código: " + getCodigo()
-				 + "Nome do jornal: " + nomeJornal + ", "
-				 + "Ano de publicação: " + getAnoPublicacao()  + ", "
-				 + "Número de páginas: " + getNumeroPaginas()  + ", "
-				 + "Volume: " + getVolume() + ", ");
+				 + " | Nome do jornal: " + nomeJornal + ", "
+				 + " | Ano de publicação: " + getAnoPublicacao()  + ", "
+				 + " | Número de páginas: " + getNumeroPaginas()  + ", "
+				 + " | Volume: " + getVolume() + ", ");
 	}
 	
 	public void atualizarDados(Jornal j) {
