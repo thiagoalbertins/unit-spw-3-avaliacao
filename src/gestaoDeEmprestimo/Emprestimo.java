@@ -19,7 +19,39 @@ public class Emprestimo {
 		this.data = data;
 	}
 
-	public void registrarEmprestimo() {
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Acervo getAcervo() {
+		return acervo;
+	}
+
+	public void setAcervo(Acervo acervo) {
+		this.acervo = acervo;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+	public void registrarEmprestimo() {//falta implementar
 		
 	}
 }
