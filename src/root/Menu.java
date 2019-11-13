@@ -212,6 +212,23 @@ public class Menu implements Input {
 							
 		}
 		
+		case "4":{
+			
+			System.out.println("Selecione o registro que deseja remover: ");
+			
+			AcervoCollection.listarAcervo(1);
+			AcervoCollection.listarAcervo(2);
+			AcervoCollection.listarAcervo(3);
+			
+			int codigo = s.nextInt();
+			
+			System.out.println("Removendo o seguinte registro: ");
+			AcervoCollection.procurarAcervo(codigo);
+			AcervoCollection.removerAcervo(AcervoCollection.retornoIndividual(codigo));
+				
+			
+		}
+		
 			
 		case "v": {
 

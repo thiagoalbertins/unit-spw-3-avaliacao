@@ -19,7 +19,7 @@ public class AcervoCollection {
 		acervo.add(a);
 	}
 
-	//Métodos relacionados a listar
+	//Métodos relacionados a listar e consultas ao acervo
 
 	public static void listarAcervo(int tipo) {
 
@@ -76,6 +76,20 @@ public class AcervoCollection {
 		return null;
 	}
 	
+	public static int getTamanhoAcervo() {
+		return acervo.size();
+	}
+
+	public static int ultimoCodigo() {
+		if (acervo.size() == 0) {
+			return 0;
+		} else {
+
+			int ultimoCodigo = acervo.get((getTamanhoAcervo() - 1)).getCodigo();
+			return ultimoCodigo;
+		}
+	}
+	
 	//Atualizar
 	
 	public static void atualizar(Acervo a) {
@@ -96,27 +110,11 @@ public class AcervoCollection {
 	}
 	
 	
-	
-	
 	//Remover
 
-	public void removerAcervo() {
-
+	public static void removerAcervo(Acervo a) {		
+		acervo.remove(a);
+		System.out.println("Removido com sucesso!");
 	}
 
-	public static int getTamanhoAcervo() {
-		return acervo.size();
-	}
-
-	public static int ultimoCodigo() {
-		if (acervo.size() == 0) {
-			return 0;
-		} else {
-
-			int ultimoCodigo = acervo.get((getTamanhoAcervo() - 1)).getCodigo();
-			return ultimoCodigo;
-		}
-	}
-	
-	
 }
