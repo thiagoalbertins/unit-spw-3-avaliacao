@@ -1,24 +1,31 @@
 package gestaoDeEmprestimo;
 
 import java.time.*;
+import java.time.format.DateTimeFormatter;
+
 import gestaoDePessoa.Usuario;
 import gestaoDeAcervo.Acervo;
 
 public class Emprestimo {
 	
+	// Atributos
 	private Usuario usuario;
 	private Acervo acervo;
 	private String status;
-	private LocalDate data;
+	private LocalDate dataFormat1 = LocalDate.now(); // formatação da data
+	private DateTimeFormatter formatoData = DateTimeFormatter.ofPattern("dd-MM-yyyy"); // formatação da data
+	private String data = dataFormat1.format(formatoData); // data formatada
 	
-	public Emprestimo(Usuario usuario, Acervo acervo, String status, LocalDate data) {
+	// Construtor
+	public Emprestimo(Usuario usuario, Acervo acervo, String status) {
 		super();
 		this.usuario = usuario;
 		this.acervo = acervo;
 		this.status = status;
-		this.data = LocalDate.now();
 	}
 
+	
+	// Getters and Setters
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -43,14 +50,15 @@ public class Emprestimo {
 		this.status = status;
 	}
 
-	public LocalDate getData() {
+	public String getData() {
 		return data;
 	}
 
-	public void setData(LocalDate data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 
+	// Métodos
 	public void registrarEmprestimo() {//falta implementar
 		
 	}
