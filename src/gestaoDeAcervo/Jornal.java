@@ -2,7 +2,6 @@ package gestaoDeAcervo;
 
 public class Jornal extends Acervo {
 
-	private int edicao;
 	private String nomeJornal;
 
 
@@ -21,7 +20,6 @@ public class Jornal extends Acervo {
 	
 	public void listarTudo() {
 		System.out.println("Nome do jornal: " + nomeJornal + ", "
-				 + "Edição: " + edicao + ", "
 				 + "Ano de publicação: " + getAnoPublicacao()  + ", "
 				 + "Número de páginas: " + getNumeroPaginas()  + ", "
 				 + "Volume: " + getVolume() + ", ");
