@@ -29,11 +29,11 @@ public class Jornal extends Acervo {
 	}
 	
 	public void listarTudo() {
-		System.out.println(nomeJornal + ", "
-				 + edicao + ", "
-				 + getAnoPublicacao()  + ", "
-				 + getNumeroPaginas()  + ", "
-				 + getVolume() + ", ");
+		System.out.println("Nome do jornal: " + nomeJornal + ", "
+				 + "Edição: " + edicao + ", "
+				 + "Ano de publicação: " + getAnoPublicacao()  + ", "
+				 + "Número de páginas: " + getNumeroPaginas()  + ", "
+				 + "Volume: " + getVolume() + ", ");
 	}
 	
 }

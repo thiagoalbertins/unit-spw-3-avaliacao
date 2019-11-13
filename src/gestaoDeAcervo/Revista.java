@@ -28,11 +28,11 @@ public class Revista extends Acervo {
 	}
 	
 	public void listarTudo() {
-		System.out.println(nomeRevista + ", "
-				 + edicao + ", "
-				 + getAnoPublicacao()  + ", "
-				 + getNumeroPaginas()  + ", "
-				 + getVolume() + ", ");
+		System.out.println("Nome da revista: " + nomeRevista + ", "
+				 + "Edição: " + edicao + ", "
+				 + "Ano de publicação: " + getAnoPublicacao()  + ", "
+				 + "Numero de páginas: " + getNumeroPaginas()  + ", "
+				 + "Volume: " + getVolume() + ", ");
 	}
 
 }
