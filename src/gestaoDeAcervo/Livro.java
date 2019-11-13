@@ -66,13 +66,18 @@ public class Livro extends Acervo {
 	}
 	
 	public void listarTudo() {
-		System.out.println("Nome do autor: " +  nomeAutor + ", "
+		System.out.println("Código: " + getCodigo()
+				 + "Nome do autor: " +  nomeAutor + ", "
 				 + "Titulo: " + titulo  + ", "
 				 + "Editora: " + editora + ", "
 				 + "Edição: " + edicao + ", "
 				 + "Ano de publicação: " + getAnoPublicacao()  + ", "
 				 + "Número de páginas: " + getNumeroPaginas()  + ", "
 				 + "Volume: " + getVolume() + ", ");
+		
+	}
+	
+	public void atualizarDados() {
 		
 	}
 		

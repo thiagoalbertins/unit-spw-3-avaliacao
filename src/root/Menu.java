@@ -102,10 +102,7 @@ public class Menu implements Input {
 				
 				System.out.println("Volume: ");
 				String volume = s.next();
-				
-				System.out.println("Número da edição: ");
-				int edicao = s.nextInt();
-				
+								
 				System.out.println("Nome do jornal: ");
 				String nomeJornal = s.next();
 
@@ -195,6 +192,26 @@ public class Menu implements Input {
 			break;
 			
 		}
+		
+		
+		//Atualizar acervo
+		
+		case "3":{
+			
+			System.out.println("Selecione o item que quer atualizar: \n");
+						
+			AcervoCollection.listarAcervo(1);
+			AcervoCollection.listarAcervo(2);
+			AcervoCollection.listarAcervo(3);
+			
+			int codigo = s.nextInt();
+			
+			System.out.println("Alterando o seguinte registro: ");
+			AcervoCollection.procurarAcervo(codigo);
+			AcervoCollection.atualizar(AcervoCollection.retornoIndividual(codigo));
+							
+		}
+		
 			
 		case "v": {
 
