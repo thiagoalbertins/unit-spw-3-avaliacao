@@ -1,6 +1,6 @@
 package gestaoDeAcervo;
 
-public class Revista extends Acervo {
+public class Revista extends Acervo implements interfaces.Input {
 
 	private int edicao;
 	private String nomeRevista;
@@ -36,7 +36,27 @@ public class Revista extends Acervo {
 				 + "Volume: " + getVolume() + ", ");
 	}
 	
-	public void atualizarDados() {
+	public void atualizarDados(Revista r) {
+		
+		System.out.println("Ano de publicação: ");
+		int anoPublicacao = s.nextInt();
+		setAnoPublicacao(anoPublicacao);
+		
+		System.out.println("Número de páginas: ");
+		int numeroPaginas = s.nextInt();
+		setNumeroPaginas(numeroPaginas);
+		
+		System.out.println("Volume: ");
+		String volume = s.next();
+		setVolume(volume);		
+		
+		System.out.println("Número da edição: ");
+		int edicao = s.nextInt();
+		setEdicao(edicao);
+		
+		System.out.println("Nome da revista: ");
+		String nomeRevista = s.next();
+		setNomeRevista(nomeRevista);
 		
 	}
 

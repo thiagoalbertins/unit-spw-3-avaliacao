@@ -1,6 +1,6 @@
 package gestaoDeAcervo;
 
-public class Livro extends Acervo {
+public class Livro extends Acervo implements interfaces.Input {
 
 	private int codigoAutor, edicao;
 	private String nomeAutor, titulo, editora, isbn;
@@ -77,9 +77,44 @@ public class Livro extends Acervo {
 		
 	}
 	
-	public void atualizarDados() {
+	public void atualizarDados(Livro l) {
 		
+		System.out.println("Ano de publicação do livro: ");
+		int anoPublicacao = s.nextInt();
+		setAnoPublicacao(anoPublicacao);
+		
+		System.out.println("Número de páginas: ");
+		int numeroPaginas = s.nextInt();
+		setNumeroPaginas(numeroPaginas);
+		
+		System.out.println("Volume: ");
+		String volume = s.next();
+		setVolume(volume);
+		
+		System.out.println("Código do autor: ");
+		int codigoAutor = s.nextInt();
+		setCodigoAutor(codigoAutor);		
+		
+		System.out.println("Nome do autor: ");
+		String nomeAutor = s.next();
+		setNomeAutor(nomeAutor);
+
+		System.out.println("Edição: ");
+		int edicao = s.nextInt();
+		setEdicao(edicao);
+		
+		System.out.println("Titulo do livro: ");
+		String titulo = s.next();
+		setTitulo(titulo);
+		
+		System.out.println("Editora: ");
+		String editora = s.next();
+		setEditora(editora);
+		
+		System.out.println("ISBN: ");
+		String isbn = s.next();
+		setIsbn(isbn);
+			
 	}
 		
-
 }

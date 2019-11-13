@@ -1,8 +1,5 @@
 package gestaoDeAcervo;
 
-import collections.AcervoCollection;
-import root.Menu;
-
 public class Jornal extends Acervo implements interfaces.Input {
 
 	private String nomeJornal;
