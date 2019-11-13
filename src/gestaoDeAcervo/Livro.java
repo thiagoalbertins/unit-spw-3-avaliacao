@@ -67,13 +67,13 @@ public class Livro extends Acervo implements interfaces.Input {
 	
 	public void listarTudo() {
 		System.out.println("Código: " + getCodigo()
-				 + "Nome do autor: " +  nomeAutor + ", "
-				 + "Titulo: " + titulo  + ", "
-				 + "Editora: " + editora + ", "
-				 + "Edição: " + edicao + ", "
-				 + "Ano de publicação: " + getAnoPublicacao()  + ", "
-				 + "Número de páginas: " + getNumeroPaginas()  + ", "
-				 + "Volume: " + getVolume() + ", ");
+				 + " | Nome do autor: " +  nomeAutor + ", "
+				 + " | Titulo: " + titulo  + ", "
+				 + " | Editora: " + editora + ", "
+				 + " | Edição: " + edicao + ", "
+				 + " | Ano de publicação: " + getAnoPublicacao()  + ", "
+				 + " | Número de páginas: " + getNumeroPaginas()  + ", "
+				 + " | Volume: " + getVolume() + ", ");
 		
 	}
 	

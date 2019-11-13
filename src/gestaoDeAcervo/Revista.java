@@ -29,11 +29,11 @@ public class Revista extends Acervo implements interfaces.Input {
 	
 	public void listarTudo() {
 		System.out.println("Código: " + getCodigo()
-				 + "Nome da revista: " + nomeRevista + ", "
-				 + "Edição: " + edicao + ", "
-				 + "Ano de publicação: " + getAnoPublicacao()  + ", "
-				 + "Numero de páginas: " + getNumeroPaginas()  + ", "
-				 + "Volume: " + getVolume() + ", ");
+				 + " | Nome da revista: " + nomeRevista + ", "
+				 + " | Edição: " + edicao + ", "
+				 + " | Ano de publicação: " + getAnoPublicacao()  + ", "
+				 + " | Numero de páginas: " + getNumeroPaginas()  + ", "
+				 + " | Volume: " + getVolume() + ", ");
 	}
 	
 	public void atualizarDados(Revista r) {
