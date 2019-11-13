@@ -109,7 +109,7 @@ public class Menu implements Input {
 				System.out.println("Nome do jornal: ");
 				String nomeJornal = s.next();
 
-				Jornal j = new Jornal(anoPublicacao, numeroPaginas, volume, edicao, nomeJornal);
+				Jornal j = new Jornal(anoPublicacao, numeroPaginas, volume, nomeJornal);
 
 				AcervoCollection.adicionarAcervo(j);
 
