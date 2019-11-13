@@ -1,7 +1,5 @@
 package gestaoDeAcervo;
 
-import collections.AcervoCollection;
-
 public class Revista extends Acervo {
 
 	private int edicao;
@@ -11,7 +9,6 @@ public class Revista extends Acervo {
 		super(anoPublicacao, numeroPaginas, 3, volume);
 		this.edicao = edicao;
 		this.nomeRevista = nomeRevista;
-		setCodigo(AcervoCollection.ultimoCodigo() + 1); //verificar
 	}
 
 	public int getEdicao() {
