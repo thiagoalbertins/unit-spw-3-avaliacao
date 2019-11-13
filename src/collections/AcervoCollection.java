@@ -90,7 +90,7 @@ public class AcervoCollection {
 			break;
 		case 3:
 			((Revista) a).atualizarDados((Revista) a);
-			break;		
+			break;
 		}
 				
 	}
