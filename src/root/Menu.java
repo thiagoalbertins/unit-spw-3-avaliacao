@@ -219,6 +219,9 @@ public class Menu implements Input {
 			System.out.println("Alterando o seguinte registro: ");
 			AcervoCollection.procurarAcervo(codigo);
 			AcervoCollection.atualizar(AcervoCollection.retornoIndividual(codigo));
+			System.out.println("Registro alterado com sucesso!");
+			
+			voltar(opcaoAnterior);
 			
 			break;
 
