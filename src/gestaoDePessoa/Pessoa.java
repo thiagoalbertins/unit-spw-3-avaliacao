@@ -17,6 +17,7 @@ public abstract class Pessoa {
 		this.endereco = endereco;
 		this.cep = cep;
 		this.email = email;
+		this.tipo=tipo;
 		this.id = PessoaCollection.ultimoId()+1;
 	}
 	
