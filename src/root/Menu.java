@@ -210,6 +210,8 @@ public class Menu implements Input {
 			System.out.println("Alterando o seguinte registro: ");
 			AcervoCollection.procurarAcervo(codigo);
 			AcervoCollection.atualizar(AcervoCollection.retornoIndividual(codigo));
+			
+			break;
 
 		}
 
@@ -226,6 +228,8 @@ public class Menu implements Input {
 			System.out.println("Removendo o seguinte registro: ");
 			AcervoCollection.procurarAcervo(codigo);
 			AcervoCollection.removerAcervo(AcervoCollection.retornoIndividual(codigo));
+			
+			break;
 
 		}
 
@@ -367,6 +371,8 @@ public class Menu implements Input {
 			int id = s.nextInt();
 
 			PessoaCollection.remover(id);
+			
+			break;
 
 		}
 
@@ -422,6 +428,8 @@ public class Menu implements Input {
 			PessoaCollection.inserir(a);
 
 			System.out.println("Cadastrado com sucesso!");
+			
+			break;
 
 		}
 
@@ -456,6 +464,8 @@ public class Menu implements Input {
 			PessoaCollection.inserir(u);
 
 			System.out.println("Cadastrado com sucesso!");
+			
+			break;
 
 		}
 
