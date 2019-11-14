@@ -2,6 +2,7 @@ package root;
 
 import collections.*;
 import gestaoDeAcervo.*;
+import gestaoDeEmprestimo.Emprestimo;
 import gestaoDePessoa.*;
 import interfaces.Input;
 import utils.Utils;
@@ -31,7 +32,7 @@ public class Menu implements Input {
 		if (voltar.equals("v")) {
 			renderizar(opcaoAnterior, opcaoAnterior);
 		}
-		;
+
 	}
 
 	public static void renderizar(String menu, String opcaoAnterior) {
@@ -89,12 +90,20 @@ public class Menu implements Input {
 
 		case "1": {
 
+			// Status
+
+			String status = "aberto";
+
+			// Obtendo o usuário que vai pegar emprestado
 			System.out.println("Escolha o ID do usuário:");
 
 			PessoaCollection.listarPessoas(2);
 
 			int id = s.nextInt();
 
+			Usuario u = (Usuario) PessoaCollection.buscaIndividual(id);
+
+			// Obtendo o item que vai ser emprestado
 			System.out.println("Qual o tipo de item?");
 			System.out.println("\n 1 - Jornal" + "\n 2 - Livro" + "\n 3 - Revista" + "\n\n [v] - Voltar");
 
@@ -108,7 +117,13 @@ public class Menu implements Input {
 				AcervoCollection.listarAcervo(1);
 
 				int escolhido = s.nextInt();
-				AcervoCollection.retornoIndividual(escolhido);
+				Acervo a = AcervoCollection.retornoIndividual(escolhido);
+
+				Emprestimo e = new Emprestimo(u, a, status);
+				
+				EmprestimoCollection.registrarEmprestimo(e);
+
+				break;
 
 			}
 			case 2: {
@@ -117,7 +132,13 @@ public class Menu implements Input {
 				AcervoCollection.listarAcervo(2);
 
 				int escolhido = s.nextInt();
-				AcervoCollection.retornoIndividual(escolhido);
+				Acervo a = AcervoCollection.retornoIndividual(escolhido);
+
+				Emprestimo e = new Emprestimo(u, a, status);
+				
+				EmprestimoCollection.registrarEmprestimo(e);
+
+				break;
 			}
 			case 3: {
 				// Listar revistas
@@ -125,7 +146,13 @@ public class Menu implements Input {
 				AcervoCollection.listarAcervo(3);
 
 				int escolhido = s.nextInt();
-				AcervoCollection.retornoIndividual(escolhido);
+				Acervo a = AcervoCollection.retornoIndividual(escolhido);
+
+				Emprestimo e = new Emprestimo(u, a, status);
+				
+				EmprestimoCollection.registrarEmprestimo(e);
+
+				break;
 			}
 
 			}
