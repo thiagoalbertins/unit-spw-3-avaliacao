@@ -346,13 +346,9 @@ public class Menu implements Input {
 			System.out.println("Removendo o seguinte registro: ");
 			AcervoCollection.procurarAcervo(codigo);
 			AcervoCollection.removerAcervo(AcervoCollection.retornoIndividual(codigo));
-<<<<<<< HEAD
-			
-			voltar(opcaoAnterior);
-			
-=======
 
->>>>>>> 356ae12585d33032e17ecb2d091e8c8f7291a88f
+			voltar(opcaoAnterior);
+
 			break;
 			}
 			else {
