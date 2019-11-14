@@ -189,6 +189,7 @@ public class Menu implements Input {
 					"\n 0 - Listar todos os itens \n 1 - Listar jornais \n 2 - Listar livros \n 3 - Listar revistas");
 
 			int tipo = s.nextInt();
+			
 			if (tipo == 1 || tipo == 2|| tipo == 3) {
 				AcervoCollection.listarAcervo(tipo);
 			    voltar(opcaoAnterior);
@@ -198,7 +199,7 @@ public class Menu implements Input {
 				AcervoCollection.listarAcervo(3);
 				voltar(opcaoAnterior);
 			}
-			
+
 			break;
 
 		}
