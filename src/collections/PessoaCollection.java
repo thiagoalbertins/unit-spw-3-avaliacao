@@ -16,14 +16,15 @@ public class PessoaCollection implements Crud {
 	
 	//Métodos de remoção
 	
-	public static void remover(int i, int tipo) {
+	public static void remover(int id) {
 		
-		if (tipo==1) {
-			pessoas.remove(i);
-		} else if (tipo==2){
-			
-		}
-
+		for (int i=0; i<pessoas.size(); i++) {
+			if (pessoas.get(i).getId()==id) {
+				pessoas.remove(i);
+			} else {
+				System.out.println("ID inválido!");
+			}
+		} 
 	}
 	
 	//Métodos de consulta

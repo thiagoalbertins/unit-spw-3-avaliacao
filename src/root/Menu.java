@@ -359,6 +359,14 @@ public class Menu implements Input {
 		case "4": {
 
 			// Remover
+			
+			System.out.println("Digite o ID da pessoa que deseja remover:");
+			
+			PessoaCollection.listarNomeId();
+
+			int id = s.nextInt();
+
+			PessoaCollection.remover(id);
 
 		}
 
