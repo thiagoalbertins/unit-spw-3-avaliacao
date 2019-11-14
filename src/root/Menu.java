@@ -10,13 +10,13 @@ public class Menu implements Input {
 
 //Estrutura de menus (códigos)
 	// 0-Menu inicial
-	// 1-Acervo
-	// 1-1 Cadastro no acervo
-	// 1-2 Listar do acervo
-	// 1-3 Atualizar acervo
-	// 1-4 Deletar do acervo
+	// 1-Acervo ok!
+	// 1-1 Cadastro no acervo ok!
+	// 1-2 Listar do acervo ok!
+	// 1-3 Atualizar acervo ok!
+	// 1-4 Deletar do acervo ok! poderia implementar opção de confirmação de deleção ou de voltar enquanto escolhe item a ser deletado
 	// 2-Pessoas
-	// 2-1 Cadastro pessoas
+	// 2-1 Cadastro pessoas ok!
 	// 2-2 Listar pessoas
 	// 2-3 Atualizar pessoas
 	// 2-4 Deletar pessoas
@@ -229,19 +229,30 @@ public class Menu implements Input {
 
 		case "4": {
 
+			if (AcervoCollection.getTamanhoAcervo() > 0) {
+				
 			System.out.println("Selecione o registro que deseja remover: ");
-
+			
 			AcervoCollection.listarAcervo(1);
 			AcervoCollection.listarAcervo(2);
 			AcervoCollection.listarAcervo(3);
-
+			
 			int codigo = s.nextInt();
-
+			
 			System.out.println("Removendo o seguinte registro: ");
 			AcervoCollection.procurarAcervo(codigo);
 			AcervoCollection.removerAcervo(AcervoCollection.retornoIndividual(codigo));
 			
+			voltar(opcaoAnterior);
+			
 			break;
+			}
+			else {
+				System.out.println("Desculpe, não existe acervo cadastrado.");
+				voltar(opcaoAnterior);
+				break;
+			}
+
 
 		}
 
@@ -422,22 +433,24 @@ public class Menu implements Input {
 		case "1": {
 
 			System.out.println("Digite o nome da pessoa:");
-			String nome = s.next();
+			@SuppressWarnings("unused")
+			String buffer = s.nextLine();
+			String nome = s.nextLine();
 
 			System.out.println("Digite o CPF:");
-			String cpf = s.next();
+			String cpf = s.nextLine();
 
 			System.out.println("Digite o telefone:");
-			String fone = s.next();
+			String fone = s.nextLine();
 
 			System.out.println("Digite o endereço:");
-			String endereco = s.next();
+			String endereco = s.nextLine();
 
 			System.out.println("Digite o CEP:");
-			String cep = s.next();
+			String cep = s.nextLine();
 
 			System.out.println("Digite o e-mail:");
-			String email = s.next();
+			String email = s.nextLine();
 
 			System.out.println("Digite o identificador:");
 			int identificador = s.nextInt();
@@ -457,28 +470,30 @@ public class Menu implements Input {
 		case "2": {
 
 			System.out.println("Digite o nome do usuário:");
-			String nome = s.next();
+			@SuppressWarnings("unused")
+			String buffer = s.nextLine();
+			String nome = s.nextLine();
 
 			System.out.println("Digite o CPF do usuário:");
-			String cpf = s.next();
+			String cpf = s.nextLine();
 
 			System.out.println("Digite o telefone do usuário:");
-			String fone = s.next();
+			String fone = s.nextLine();
 
 			System.out.println("Digite o endereço do usuário:");
-			String endereco = s.next();
+			String endereco = s.nextLine();
 
 			System.out.println("Qual o CEP?");
-			String cep = s.next();
+			String cep = s.nextLine();
 
 			System.out.println("E-mail:");
-			String email = s.next();
+			String email = s.nextLine();
 
 			System.out.println("Matricula:");
-			String matricula = s.next();
+			String matricula = s.nextLine();
 
 			System.out.println("Qual o curso?");
-			String curso = s.next();
+			String curso = s.nextLine();
 
 			Usuario u = new Usuario(nome, cpf, fone, endereco, cep, email, matricula, curso);
 
