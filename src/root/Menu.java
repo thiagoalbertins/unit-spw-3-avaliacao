@@ -1,13 +1,8 @@
 package root;
 
-import collections.AcervoCollection;
-import collections.PessoaCollection;
-import gestaoDeAcervo.Jornal;
-import gestaoDeAcervo.Livro;
-import gestaoDeAcervo.Revista;
-import gestaoDePessoa.Atendente;
-import gestaoDePessoa.Pessoa;
-import gestaoDePessoa.Usuario;
+import collections.*;
+import gestaoDeAcervo.*;
+import gestaoDePessoa.*;
 import interfaces.Input;
 import utils.Utils;
 
