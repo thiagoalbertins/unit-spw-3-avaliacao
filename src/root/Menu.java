@@ -2,6 +2,7 @@ package root;
 
 import collections.*;
 import gestaoDeAcervo.*;
+import gestaoDeEmprestimo.Emprestimo;
 import gestaoDePessoa.*;
 import interfaces.Input;
 import utils.Utils;
@@ -31,7 +32,7 @@ public class Menu implements Input {
 		if (voltar.equals("v")) {
 			renderizar(opcaoAnterior, opcaoAnterior);
 		}
-		;
+
 	}
 
 	public static void renderizar(String menu, String opcaoAnterior) {
@@ -53,6 +54,11 @@ public class Menu implements Input {
 			menuPessoas(opcaoAnterior);
 			break;
 
+		case "3":
+			Utils.limparTela();
+			menuEmprestimos(opcaoAnterior);
+			break;
+
 		}
 
 	}
@@ -63,11 +69,109 @@ public class Menu implements Input {
 
 		String opcao;
 
-		System.out.println("Sistema Biblioteca \n\n\n" + "\n 1 - Acervo" + "\n 2 - Pessoas");
+		System.out.println("Sistema Biblioteca \n\n\n" + "\n 1 - Acervo" + "\n 2 - Pessoas" + "\n 3 - Empréstimos");
 
 		opcao = s.next();
 
 		renderizar(opcao, opcaoAnterior);
+
+	}
+
+// Empréstimos
+
+	private static void menuEmprestimos(String opcaoAnterior) {
+
+		System.out.println("Menu Empréstimos \n\n\n" + "\n 1 - Registrar empréstimo" + "\n 2 - Registrar devolução"
+				+ "\n 3 - Listar todos os empréstimos" + "\n\n [v] - Voltar");
+
+		String opcao = s.next();
+
+		switch (opcao) {
+
+		case "1": {
+
+			// Status
+
+			String status = "aberto";
+
+			// Obtendo o usuário que vai pegar emprestado
+			System.out.println("Escolha o ID do usuário:");
+
+			PessoaCollection.listarPessoas(2);
+
+			int id = s.nextInt();
+
+			Usuario u = (Usuario) PessoaCollection.buscaIndividual(id);
+
+			// Obtendo o item que vai ser emprestado
+			System.out.println("Qual o tipo de item?");
+			System.out.println("\n 1 - Jornal" + "\n 2 - Livro" + "\n 3 - Revista" + "\n\n [v] - Voltar");
+
+			int tipoEmprestimo = s.nextInt();
+
+			switch (tipoEmprestimo) {
+
+			case 1: {
+				// Listar jornais
+				System.out.println("Jornais disponíveis:");
+				AcervoCollection.listarAcervo(1);
+
+				int escolhido = s.nextInt();
+				Acervo a = AcervoCollection.retornoIndividual(escolhido);
+
+				Emprestimo e = new Emprestimo(u, a, status);
+				
+				EmprestimoCollection.registrarEmprestimo(e);
+
+				break;
+
+			}
+			case 2: {
+				// Listar livros
+				System.out.println("Livros disponíveis:");
+				AcervoCollection.listarAcervo(2);
+
+				int escolhido = s.nextInt();
+				Acervo a = AcervoCollection.retornoIndividual(escolhido);
+
+				Emprestimo e = new Emprestimo(u, a, status);
+				
+				EmprestimoCollection.registrarEmprestimo(e);
+
+				break;
+			}
+			case 3: {
+				// Listar revistas
+				System.out.println("Revistas disponíveis:");
+				AcervoCollection.listarAcervo(3);
+
+				int escolhido = s.nextInt();
+				Acervo a = AcervoCollection.retornoIndividual(escolhido);
+
+				Emprestimo e = new Emprestimo(u, a, status);
+				
+				EmprestimoCollection.registrarEmprestimo(e);
+
+				break;
+			}
+
+			}
+
+		}
+
+		case "2": {
+
+		}
+
+		case "3": {
+
+		}
+
+		case "v": {
+
+		}
+
+		}
 
 	}
 
@@ -189,10 +293,10 @@ public class Menu implements Input {
 					"\n 0 - Listar todos os itens \n 1 - Listar jornais \n 2 - Listar livros \n 3 - Listar revistas");
 
 			int tipo = s.nextInt();
-			
-			if (tipo == 1 || tipo == 2|| tipo == 3) {
+
+			if (tipo == 1 || tipo == 2 || tipo == 3) {
 				AcervoCollection.listarAcervo(tipo);
-			    voltar(opcaoAnterior);
+				voltar(opcaoAnterior);
 			} else if (tipo == 0) {
 				AcervoCollection.listarAcervo(1);
 				AcervoCollection.listarAcervo(2);
@@ -220,9 +324,9 @@ public class Menu implements Input {
 			AcervoCollection.procurarAcervo(codigo);
 			AcervoCollection.atualizar(AcervoCollection.retornoIndividual(codigo));
 			System.out.println("Registro alterado com sucesso!");
-			
+
 			voltar(opcaoAnterior);
-			
+
 			break;
 
 		}
@@ -242,9 +346,13 @@ public class Menu implements Input {
 			System.out.println("Removendo o seguinte registro: ");
 			AcervoCollection.procurarAcervo(codigo);
 			AcervoCollection.removerAcervo(AcervoCollection.retornoIndividual(codigo));
+<<<<<<< HEAD
 			
 			voltar(opcaoAnterior);
 			
+=======
+
+>>>>>>> 356ae12585d33032e17ecb2d091e8c8f7291a88f
 			break;
 			}
 			else {
@@ -339,9 +447,9 @@ public class Menu implements Input {
 				System.out.println("Digite o identificador:");
 				int identificador = s.nextInt();
 				((Atendente) p).setIdentificador(identificador);
-				
+
 				voltar(opcaoAnterior);
-		
+
 				break;
 			}
 
@@ -350,7 +458,7 @@ public class Menu implements Input {
 				System.out.println("Digite o nome do usuário:");
 				String nome = s.next();
 				p.setNome(nome);
-				
+
 				System.out.println("Digite o CPF do usuário:");
 				String cpf = s.next();
 				p.setCpf(cpf);
@@ -374,11 +482,11 @@ public class Menu implements Input {
 				System.out.println("Matricula:");
 				String matricula = s.next();
 				((Usuario) p).setMatricula(matricula);
-				
+
 				System.out.println("Qual o curso?");
 				String curso = s.next();
 				((Usuario) p).setCurso(curso);
-				
+
 				voltar(opcaoAnterior);
 
 				break;
@@ -391,17 +499,17 @@ public class Menu implements Input {
 		case "4": {
 
 			// Remover
-			
+
 			System.out.println("Digite o ID da pessoa que deseja remover:");
-			
+
 			PessoaCollection.listarNomeId();
 
 			int id = s.nextInt();
 
 			PessoaCollection.remover(id);
-			
+
 			voltar(opcaoAnterior);
-			
+
 			break;
 
 		}
@@ -460,9 +568,9 @@ public class Menu implements Input {
 			PessoaCollection.inserir(a);
 
 			System.out.println("Cadastrado com sucesso!");
-			
+
 			voltar(opcaoAnterior);
-			
+
 			break;
 
 		}
@@ -500,9 +608,9 @@ public class Menu implements Input {
 			PessoaCollection.inserir(u);
 
 			System.out.println("Cadastrado com sucesso!");
-			
+
 			voltar(opcaoAnterior);
-			
+
 			break;
 
 		}
