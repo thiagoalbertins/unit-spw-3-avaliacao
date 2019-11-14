@@ -53,6 +53,11 @@ public class Menu implements Input {
 			menuPessoas(opcaoAnterior);
 			break;
 
+		case "3":
+			Utils.limparTela();
+			menuEmprestimos(opcaoAnterior);
+			break;
+
 		}
 
 	}
@@ -63,11 +68,55 @@ public class Menu implements Input {
 
 		String opcao;
 
-		System.out.println("Sistema Biblioteca \n\n\n" + "\n 1 - Acervo" + "\n 2 - Pessoas");
+		System.out.println("Sistema Biblioteca \n\n\n" + "\n 1 - Acervo" + "\n 2 - Pessoas" + "\n 3 - Empréstimos");
 
 		opcao = s.next();
 
 		renderizar(opcao, opcaoAnterior);
+
+	}
+
+// Empréstimos
+
+	private static void menuEmprestimos(String opcaoAnterior) {
+
+		System.out.println("Menu Empréstimos \n\n\n" + "\n 1 - Registrar empréstimo" + "\n 2 - Registrar devolução"
+				+ "\n 3 - Listar todos os empréstimos" + "\n\n [v] - Voltar");
+
+		String opcao = s.next();
+
+		switch (opcao) {
+
+		case "1": {
+			
+			System.out.println("Escolha o usuário:");
+			//Listar usuários cadastrados
+			
+			System.out.println("Qual o tipo de item?"); //livro,revista,jornal
+			System.out.println("\n 1 - Jornal" + "\n 2 - Livro"
+					+ "\n 3 - Revista" + "\n\n [v] - Voltar");
+			
+			
+			
+			
+			
+			
+
+		}
+
+		case "2": {
+
+		}
+
+		case "3": {
+
+		}
+
+		case "v": {
+
+		}
+
+		}
 
 	}
 
@@ -210,7 +259,7 @@ public class Menu implements Input {
 			System.out.println("Alterando o seguinte registro: ");
 			AcervoCollection.procurarAcervo(codigo);
 			AcervoCollection.atualizar(AcervoCollection.retornoIndividual(codigo));
-			
+
 			break;
 
 		}
@@ -228,7 +277,7 @@ public class Menu implements Input {
 			System.out.println("Removendo o seguinte registro: ");
 			AcervoCollection.procurarAcervo(codigo);
 			AcervoCollection.removerAcervo(AcervoCollection.retornoIndividual(codigo));
-			
+
 			break;
 
 		}
@@ -316,9 +365,9 @@ public class Menu implements Input {
 				System.out.println("Digite o identificador:");
 				int identificador = s.nextInt();
 				((Atendente) p).setIdentificador(identificador);
-				
+
 				voltar(opcaoAnterior);
-		
+
 				break;
 			}
 
@@ -327,7 +376,7 @@ public class Menu implements Input {
 				System.out.println("Digite o nome do usuário:");
 				String nome = s.next();
 				p.setNome(nome);
-				
+
 				System.out.println("Digite o CPF do usuário:");
 				String cpf = s.next();
 				p.setCpf(cpf);
@@ -351,11 +400,11 @@ public class Menu implements Input {
 				System.out.println("Matricula:");
 				String matricula = s.next();
 				((Usuario) p).setMatricula(matricula);
-				
+
 				System.out.println("Qual o curso?");
 				String curso = s.next();
 				((Usuario) p).setCurso(curso);
-				
+
 				voltar(opcaoAnterior);
 
 				break;
@@ -368,17 +417,17 @@ public class Menu implements Input {
 		case "4": {
 
 			// Remover
-			
+
 			System.out.println("Digite o ID da pessoa que deseja remover:");
-			
+
 			PessoaCollection.listarNomeId();
 
 			int id = s.nextInt();
 
 			PessoaCollection.remover(id);
-			
+
 			voltar(opcaoAnterior);
-			
+
 			break;
 
 		}
@@ -435,9 +484,9 @@ public class Menu implements Input {
 			PessoaCollection.inserir(a);
 
 			System.out.println("Cadastrado com sucesso!");
-			
+
 			voltar(opcaoAnterior);
-			
+
 			break;
 
 		}
@@ -473,9 +522,9 @@ public class Menu implements Input {
 			PessoaCollection.inserir(u);
 
 			System.out.println("Cadastrado com sucesso!");
-			
+
 			voltar(opcaoAnterior);
-			
+
 			break;
 
 		}

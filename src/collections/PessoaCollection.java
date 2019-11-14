@@ -8,7 +8,7 @@ public class PessoaCollection implements Crud {
 
 	private static ArrayList<Pessoa> pessoas = new ArrayList<>();
 
-	// Criar CRUD para a pessoa//
+	// Criar CRUD para a pessoa
 
 	public static void inserir(Pessoa p) {
 		pessoas.add(p);
