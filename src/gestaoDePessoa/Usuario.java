@@ -4,7 +4,7 @@ public class Usuario extends Pessoa {
 	
 	private String matricula, curso;
 
-	public Usuario(String nome, String cpf, String fone, String endereco, String cep, String email, int tipo,
+	public Usuario(String nome, String cpf, String fone, String endereco, String cep, String email,
 			String matricula, String curso) {
 		super(nome, cpf, fone, endereco, cep, email, 2);
 		this.matricula = matricula;

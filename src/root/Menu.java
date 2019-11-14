@@ -7,6 +7,7 @@ import gestaoDeAcervo.Livro;
 import gestaoDeAcervo.Revista;
 import gestaoDePessoa.Atendente;
 import gestaoDePessoa.Pessoa;
+import gestaoDePessoa.Usuario;
 import interfaces.Input;
 import utils.Utils;
 
@@ -301,9 +302,7 @@ public class Menu implements Input {
 
 		//Atendente
 		case "1":{
-			
-			//String nome, String cpf, String fone, String endereco, String cep, String email, int identificador
-			
+						
 			System.out.println("Digite o nome da pessoa:");
 			String nome = s.next();
 			
@@ -331,12 +330,42 @@ public class Menu implements Input {
 			
 			System.out.println("Cadastrado com sucesso!");
 			
+		}
+		
+		case "2":{
+		
+			System.out.println("Digite o nome do usuário:");
+			String nome = s.next();
 			
+			System.out.println("Digite o CPF do usuário:");
+			String cpf = s.next();
+			
+			System.out.println("Digite o telefone do usuário:");
+			String fone = s.next();
+			
+			System.out.println("Digite o endereço do usuário:");
+			String endereco = s.next();
+			
+			System.out.println("Qual o CEP?");
+			String cep = s.next();
+			
+			System.out.println("E-mail:");
+			String email = s.next();
+			
+			System.out.println("Matricula:");
+			String matricula = s.next();
+			
+			System.out.println("Qual o curso?");
+			String curso = s.next();			
+			
+			Usuario u = new Usuario(nome,cpf,fone,endereco,cep,email,matricula,curso);
+			
+			PessoaCollection.inserir(u);
+			
+			System.out.println("Cadastrado com sucesso!");
+					
 		}
 			
-			
-			
-
 		case "v":
 
 			if (opcaoAnterior == "0") {
