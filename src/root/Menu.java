@@ -88,19 +88,47 @@ public class Menu implements Input {
 		switch (opcao) {
 
 		case "1": {
-			
-			System.out.println("Escolha o usuário:");
-			//Listar usuários cadastrados
-			
-			System.out.println("Qual o tipo de item?"); //livro,revista,jornal
-			System.out.println("\n 1 - Jornal" + "\n 2 - Livro"
-					+ "\n 3 - Revista" + "\n\n [v] - Voltar");
-			
-			
-			
-			
-			
-			
+
+			System.out.println("Escolha o ID do usuário:");
+
+			PessoaCollection.listarPessoas(2);
+
+			int id = s.nextInt();
+
+			System.out.println("Qual o tipo de item?");
+			System.out.println("\n 1 - Jornal" + "\n 2 - Livro" + "\n 3 - Revista" + "\n\n [v] - Voltar");
+
+			int tipoEmprestimo = s.nextInt();
+
+			switch (tipoEmprestimo) {
+
+			case 1: {
+				// Listar jornais
+				System.out.println("Jornais disponíveis:");
+				AcervoCollection.listarAcervo(1);
+
+				int escolhido = s.nextInt();
+				AcervoCollection.retornoIndividual(escolhido);
+
+			}
+			case 2: {
+				// Listar livros
+				System.out.println("Livros disponíveis:");
+				AcervoCollection.listarAcervo(2);
+
+				int escolhido = s.nextInt();
+				AcervoCollection.retornoIndividual(escolhido);
+			}
+			case 3: {
+				// Listar revistas
+				System.out.println("Revistas disponíveis:");
+				AcervoCollection.listarAcervo(3);
+
+				int escolhido = s.nextInt();
+				AcervoCollection.retornoIndividual(escolhido);
+			}
+
+			}
 
 		}
 
@@ -238,10 +266,10 @@ public class Menu implements Input {
 					"\n 0 - Listar todos os itens \n 1 - Listar jornais \n 2 - Listar livros \n 3 - Listar revistas");
 
 			int tipo = s.nextInt();
-			
-			if (tipo == 1 || tipo == 2|| tipo == 3) {
+
+			if (tipo == 1 || tipo == 2 || tipo == 3) {
 				AcervoCollection.listarAcervo(tipo);
-			    voltar(opcaoAnterior);
+				voltar(opcaoAnterior);
 			} else if (tipo == 0) {
 				AcervoCollection.listarAcervo(1);
 				AcervoCollection.listarAcervo(2);
@@ -269,9 +297,9 @@ public class Menu implements Input {
 			AcervoCollection.procurarAcervo(codigo);
 			AcervoCollection.atualizar(AcervoCollection.retornoIndividual(codigo));
 			System.out.println("Registro alterado com sucesso!");
-			
+
 			voltar(opcaoAnterior);
-			
+
 			break;
 
 		}
