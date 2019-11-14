@@ -261,6 +261,7 @@ public class Menu implements Input {
 		
 		case "1":{
 			
+			//Cadastro de pessoas
 			menuCadastroPessoas(opcaoAnterior);
 			break;
 			
@@ -268,13 +269,20 @@ public class Menu implements Input {
 		
 		case "2":{
 			
+			PessoaCollection.listarNomeId();
+			break;
+			
 		}
 		
 		case "3":{
 			
+			//Atualizar
+			
 		}
 		
 		case "4":{
+			
+			//Remover
 			
 		}
 
@@ -290,7 +298,9 @@ public class Menu implements Input {
 		}
 
 	}
-
+	
+	
+	//Cadastro de pessoas
 	private static void menuCadastroPessoas(String opcaoAnterior) {
 
 		System.out.println("Cadastro de pessoas \n\n\n" + "Escolha o tipo de pessoa: " + "\n 1 - Antendente"
@@ -377,5 +387,7 @@ public class Menu implements Input {
 		}
 
 	}
+	
+	//Listar pessoas	
 
 }

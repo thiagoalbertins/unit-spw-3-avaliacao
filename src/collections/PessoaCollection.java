@@ -31,7 +31,7 @@ public class PessoaCollection implements Crud {
 	public static void listarNomeId() {
 		
 		for(int i = 0; i<tamanhoLista(); i++) {
-			System.out.println("ID: " + pessoas.get(i).getId() + ", Nome: " + pessoas.get(i).getNome());
+			System.out.println("ID: " + pessoas.get(i).getId() + ", Nome: " + pessoas.get(i).getNome() + ", Tipo de pessoa: " + pessoas.get(i).getTipo());
 			
 		}		
 	}
