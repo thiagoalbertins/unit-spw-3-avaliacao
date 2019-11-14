@@ -18,7 +18,6 @@ public class Emprestimo {
 	
 	// Construtor
 	public Emprestimo(Usuario usuario, Acervo acervo, String status) {
-		super();
 		this.usuario = usuario;
 		this.acervo = acervo;
 		this.status = status;
