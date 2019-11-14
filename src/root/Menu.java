@@ -269,6 +269,7 @@ public class Menu implements Input {
 		case "2": {
 
 			PessoaCollection.listarNomeId();
+			voltar(opcaoAnterior);
 			break;
 
 		}
@@ -490,7 +491,5 @@ public class Menu implements Input {
 		}
 
 	}
-
-	// Listar pessoas
 
 }
