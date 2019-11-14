@@ -238,8 +238,17 @@ public class Menu implements Input {
 					"\n 0 - Listar todos os itens \n 1 - Listar jornais \n 2 - Listar livros \n 3 - Listar revistas");
 
 			int tipo = s.nextInt();
-			AcervoCollection.listarAcervo(tipo);
-			voltar(opcaoAnterior);
+			
+			if (tipo == 1 || tipo == 2|| tipo == 3) {
+				AcervoCollection.listarAcervo(tipo);
+			    voltar(opcaoAnterior);
+			} else if (tipo == 0) {
+				AcervoCollection.listarAcervo(1);
+				AcervoCollection.listarAcervo(2);
+				AcervoCollection.listarAcervo(3);
+				voltar(opcaoAnterior);
+			}
+
 			break;
 
 		}
@@ -259,7 +268,10 @@ public class Menu implements Input {
 			System.out.println("Alterando o seguinte registro: ");
 			AcervoCollection.procurarAcervo(codigo);
 			AcervoCollection.atualizar(AcervoCollection.retornoIndividual(codigo));
-
+			System.out.println("Registro alterado com sucesso!");
+			
+			voltar(opcaoAnterior);
+			
 			break;
 
 		}
