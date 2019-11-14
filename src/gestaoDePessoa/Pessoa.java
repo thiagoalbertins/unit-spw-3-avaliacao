@@ -11,7 +11,6 @@ public abstract class Pessoa {
 	//Construtor
 	
 	public Pessoa(String nome, String cpf, String fone, String endereco, String cep, String email, int tipo) {
-		super();
 		this.nome = nome;
 		this.cpf = cpf;
 		this.fone = fone;

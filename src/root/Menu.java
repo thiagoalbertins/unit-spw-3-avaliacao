@@ -1,9 +1,12 @@
 package root;
 
 import collections.AcervoCollection;
+import collections.PessoaCollection;
 import gestaoDeAcervo.Jornal;
 import gestaoDeAcervo.Livro;
 import gestaoDeAcervo.Revista;
+import gestaoDePessoa.Atendente;
+import gestaoDePessoa.Pessoa;
 import interfaces.Input;
 import utils.Utils;
 
@@ -57,7 +60,7 @@ public class Menu implements Input {
 
 	}
 
-	// Início
+// Início
 
 	private static void menuInicial(String opcaoAnterior) {
 
@@ -71,7 +74,7 @@ public class Menu implements Input {
 
 	}
 
-	// Acervo
+// Acervo
 
 	private static void menuAcervo(String opcaoAnterior) {
 
@@ -244,7 +247,7 @@ public class Menu implements Input {
 			
 }
 
-	// Pessoas
+// Pessoas
 
 	private static void menuPessoas(String opcaoAnterior) {
 
@@ -254,6 +257,25 @@ public class Menu implements Input {
 		String opcao = s.next();
 
 		switch (opcao) {
+		
+		case "1":{
+			
+			menuCadastroPessoas(opcaoAnterior);
+			break;
+			
+		}
+		
+		case "2":{
+			
+		}
+		
+		case "3":{
+			
+		}
+		
+		case "4":{
+			
+		}
 
 		case "v":
 
@@ -277,7 +299,43 @@ public class Menu implements Input {
 
 		switch (opcao) {
 
-		case "1":
+		//Atendente
+		case "1":{
+			
+			//String nome, String cpf, String fone, String endereco, String cep, String email, int identificador
+			
+			System.out.println("Digite o nome da pessoa:");
+			String nome = s.next();
+			
+			System.out.println("Digite o CPF:");
+			String cpf = s.next();
+			
+			System.out.println("Digite o telefone:");
+			String fone = s.next();
+			
+			System.out.println("Digite o endereço:");
+			String endereco = s.next();
+			
+			System.out.println("Digite o CEP:");
+			String cep = s.next();
+			
+			System.out.println("Digite o e-mail:");
+			String email = s.next();
+			
+			System.out.println("Digite o identificador:");
+			int identificador = s.nextInt();
+			
+			Atendente a = new Atendente(nome,cpf,fone,endereco,cep,email,identificador);
+			
+			PessoaCollection.inserir(a);
+			
+			System.out.println("Cadastrado com sucesso!");
+			
+			
+		}
+			
+			
+			
 
 		case "v":
 
