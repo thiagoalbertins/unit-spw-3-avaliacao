@@ -17,4 +17,10 @@ public class Atendente extends Pessoa {
 		this.identificador = identificador;
 	}
 	
+	public void atualizar(Atendente a) {
+		
+		
+		
+	}
+	
 }

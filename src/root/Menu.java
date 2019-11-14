@@ -276,7 +276,57 @@ public class Menu implements Input {
 		
 		case "3":{
 			
-			//Atualizar
+			//Atualizar pessoas
+			
+			System.out.println("Digite o ID da pessoa que deseja alterar:");
+			PessoaCollection.listarNomeId();
+			
+			int id = s.nextInt();
+			
+			Pessoa p = PessoaCollection.buscaIndividual(id);
+			
+			switch(p.getTipo()) {
+			
+			case 1:
+				
+				System.out.println("Digite o nome da pessoa:");
+				String nome = s.next();
+				p.setNome(nome);
+				
+				System.out.println("Digite o CPF:");
+				String cpf = s.next();
+				p.setCpf(cpf);
+				
+				System.out.println("Digite o telefone:");
+				String fone = s.next();
+				p.setFone(fone);
+				
+				System.out.println("Digite o endereço:");
+				String endereco = s.next();
+				p.setEndereco(endereco);
+				
+				System.out.println("Digite o CEP:");
+				String cep = s.next();
+				p.setCep(cep);
+				
+				System.out.println("Digite o e-mail:");
+				String email = s.next();
+				p.setEmail(email);
+				
+				System.out.println("Digite o identificador:");
+				int identificador = s.nextInt();
+				((Atendente) p).setIdentificador(identificador);
+				
+				break;
+				
+			case 2:
+				
+				break;
+			
+			
+			}
+			
+			
 			
 		}
 		

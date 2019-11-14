@@ -46,4 +46,16 @@ public class PessoaCollection implements Crud {
 		
 		return ultimoId;
 	}
+	
+	public static Pessoa buscaIndividual(int id) {
+		
+		for(int i = 0; i < pessoas.size(); i++) {
+			if (pessoas.get(i).getId()==id) {
+				return pessoas.get(i);
+			}
+		}
+		
+		return null;
+		
+	}
 }

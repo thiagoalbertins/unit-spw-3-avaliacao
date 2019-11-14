@@ -26,5 +26,9 @@ public class Usuario extends Pessoa {
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
+	
+	public void atualizar(Usuario u) {
+		
+	}
 
 }
