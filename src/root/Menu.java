@@ -315,7 +315,9 @@ public class Menu implements Input {
 				System.out.println("Digite o identificador:");
 				int identificador = s.nextInt();
 				((Atendente) p).setIdentificador(identificador);
-
+				
+				voltar(opcaoAnterior);
+		
 				break;
 			}
 
@@ -352,6 +354,8 @@ public class Menu implements Input {
 				System.out.println("Qual o curso?");
 				String curso = s.next();
 				((Usuario) p).setCurso(curso);
+				
+				voltar(opcaoAnterior);
 
 				break;
 			}
@@ -371,6 +375,8 @@ public class Menu implements Input {
 			int id = s.nextInt();
 
 			PessoaCollection.remover(id);
+			
+			voltar(opcaoAnterior);
 			
 			break;
 
@@ -429,6 +435,8 @@ public class Menu implements Input {
 
 			System.out.println("Cadastrado com sucesso!");
 			
+			voltar(opcaoAnterior);
+			
 			break;
 
 		}
@@ -464,6 +472,8 @@ public class Menu implements Input {
 			PessoaCollection.inserir(u);
 
 			System.out.println("Cadastrado com sucesso!");
+			
+			voltar(opcaoAnterior);
 			
 			break;
 
