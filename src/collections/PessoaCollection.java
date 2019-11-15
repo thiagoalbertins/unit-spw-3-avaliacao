@@ -28,12 +28,21 @@ public class PessoaCollection implements Crud {
 	}
 
 	// Métodos de consulta
-
+	
 	public static void listarNomeId() {
 
+		String tipoDePessoa = "";
 		for (int i = 0; i < tamanhoLista(); i++) {
-			System.out.println("ID: " + pessoas.get(i).getId() + ", Nome: " + pessoas.get(i).getNome()
-					+ ", Tipo de pessoa: " + pessoas.get(i).getTipo());
+			if (pessoas.get(i).getTipo() == 1) {
+				tipoDePessoa = "Atendente";
+			}
+			else if (pessoas.get(i).getTipo() == 2) {
+				tipoDePessoa = " Usuário ";
+			}
+			System.out.println("ID: " + pessoas.get(i).getId() + " || " + tipoDePessoa + " || Nome: " + pessoas.get(i).getNome()
+					+ ", CPF: " + pessoas.get(i).getCpf()
+					+ ", Telefone: " + pessoas.get(i).getFone()
+					+ ", Email: " + pessoas.get(i).getEmail());
 
 		}
 	}

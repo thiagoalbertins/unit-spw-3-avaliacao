@@ -18,7 +18,7 @@ public class Menu implements Input {
 	// 1-4 Deletar do acervo ok! poderia implementar opção de confirmação de deleção ou de voltar enquanto escolhe item a ser deletado
 	// 2-Pessoas
 	// 2-1 Cadastro pessoas ok!
-	// 2-2 Listar pessoas
+	// 2-2 Listar pessoas ok!
 	// 2-3 Atualizar pessoas
 	// 2-4 Deletar pessoas
 
@@ -395,9 +395,16 @@ public class Menu implements Input {
 
 		case "2": {
 
+			if (PessoaCollection.tamanhoLista() == 0) {
+				System.out.println("Desculpe, não existem pessoas cadastradas");
+				voltar(opcaoAnterior);
+				break;
+			} else {
 			PessoaCollection.listarNomeId();
 			voltar(opcaoAnterior);
 			break;
+			}
+
 
 		}
 
@@ -526,7 +533,7 @@ public class Menu implements Input {
 	// Cadastro de pessoas
 	private static void menuCadastroPessoas(String opcaoAnterior) {
 
-		System.out.println("Cadastro de pessoas \n\n\n" + "Escolha o tipo de pessoa: " + "\n 1 - Antendente"
+		System.out.println("Cadastro de pessoas \n\n\n" + "Escolha o tipo de pessoa: " + "\n 1 - Atendente"
 				+ "\n 2 - Usuário" + "\n\n [v] - Voltar");
 
 		String opcao = s.next();
