@@ -27,8 +27,4 @@ public class Usuario extends Pessoa {
 		this.matricula = matricula;
 	}
 	
-	public void atualizar(Usuario u) {
-		
-	}
-
 }

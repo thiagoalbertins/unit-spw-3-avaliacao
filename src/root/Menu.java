@@ -121,6 +121,7 @@ public class Menu implements Input {
 				switch (tipoEmprestimo) {
 
 				case 1: {
+
 					// Listar jornais
 					System.out.println("Jornais disponíveis:");
 					AcervoCollection.listarAcervo(1);
@@ -136,6 +137,7 @@ public class Menu implements Input {
 
 				}
 				case 2: {
+
 					// Listar livros
 					System.out.println("Livros disponíveis:");
 					AcervoCollection.listarAcervo(2);
@@ -177,6 +179,23 @@ public class Menu implements Input {
 		}
 
 		case "2": {
+
+			if (EmprestimoCollection.tamanhoLista() > 0) {
+
+				//Registrar devolução;
+				
+				System.out.println("Selecione o empréstimo:");
+				
+				
+
+			} else {
+
+				System.out.println("Não existem empréstimos cadastrados!");
+				voltar(opcaoAnterior);
+
+			}
+
+			break;
 
 		}
 
@@ -357,7 +376,7 @@ public class Menu implements Input {
 		}
 
 		// Remover Acervo
-		
+
 		case "4": {
 
 			if (AcervoCollection.getTamanhoAcervo() > 0) {

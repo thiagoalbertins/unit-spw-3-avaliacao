@@ -3,6 +3,7 @@ package gestaoDeEmprestimo;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 
+import collections.EmprestimoCollection;
 import gestaoDePessoa.Usuario;
 import gestaoDeAcervo.Acervo;
 
@@ -57,8 +58,4 @@ public class Emprestimo {
 		this.data = data;
 	}
 
-	// Métodos
-	public void registrarEmprestimo() {//falta implementar
-		
-	}
 }
