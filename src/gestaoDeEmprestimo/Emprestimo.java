@@ -1,7 +1,8 @@
 package gestaoDeEmprestimo;
 
-import java.time.*;
-import java.time.format.DateTimeFormatter;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import collections.EmprestimoCollection;
 import gestaoDePessoa.Usuario;
@@ -13,19 +14,45 @@ public class Emprestimo {
 	private Usuario usuario;
 	private Acervo acervo;
 	private String status;
-	private LocalDate dataFormat1 = LocalDate.now(); // formatação da data
-	private DateTimeFormatter formatoData = DateTimeFormatter.ofPattern("dd-MM-yyyy"); // formatação da data
-	private String data = dataFormat1.format(formatoData); // data formatada
+	@SuppressWarnings("unused")
+	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	private Date data = new Date();
+	private Calendar cal = Calendar.getInstance();
+//	private String data = sdf.format(hoje);
+	private Date dataParaDevolucao;
+	private Date dataDevolvido;
 	
 	// Construtor
 	public Emprestimo(Usuario usuario, Acervo acervo, String status) {
 		this.usuario = usuario;
 		this.acervo = acervo;
 		this.status = status;
+		cal.setTime(data);
+		cal.add(Calendar.DAY_OF_MONTH, 7);
+		this.dataParaDevolucao = cal.getTime();
 	}
 
-	
 	// Getters and Setters
+	
+	public Date getDataParaDevolucao() {
+		return dataParaDevolucao;
+	}
+
+
+	public void setDataParaDevolucao(Date dataParaDevolucao) {
+		this.dataParaDevolucao = dataParaDevolucao;
+	}
+
+
+	public Date getDataDevolvido() {
+		return dataDevolvido;
+	}
+
+
+	public void setDataDevolvido(Date dataDevolvido) {
+		this.dataDevolvido = dataDevolvido;
+	}
+
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -50,11 +77,11 @@ public class Emprestimo {
 		this.status = status;
 	}
 
-	public String getData() {
+	public Date getData() {
 		return data;
 	}
 
-	public void setData(String data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 
