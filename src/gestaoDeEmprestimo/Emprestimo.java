@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import collections.EmprestimoCollection;
 import gestaoDePessoa.Usuario;
 import gestaoDeAcervo.Acervo;
 
@@ -84,8 +85,4 @@ public class Emprestimo {
 		this.data = data;
 	}
 
-	// Métodos
-	public void registrarEmprestimo() {//falta implementar
-		
-	}
 }
