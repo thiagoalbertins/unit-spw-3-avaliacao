@@ -19,8 +19,8 @@ public class Menu implements Input {
 	// 2-Pessoas
 	// 2-1 Cadastro pessoas ok!
 	// 2-2 Listar pessoas ok!
-	// 2-3 Atualizar pessoas
-	// 2-4 Deletar pessoas
+	// 2-3 Atualizar pessoas ok!
+	// 2-4 Deletar pessoas ok!
 
 	// Render -> Método público responsável por renderizar os menus
 
@@ -396,7 +396,7 @@ public class Menu implements Input {
 		case "2": {
 
 			if (PessoaCollection.tamanhoLista() == 0) {
-				System.out.println("Desculpe, não existem pessoas cadastradas");
+				System.out.println("Desculpe, não existem pessoas cadastradas!");
 				voltar(opcaoAnterior);
 				break;
 			} else {
@@ -412,6 +412,8 @@ public class Menu implements Input {
 
 			// Atualizar pessoas
 
+			if (PessoaCollection.tamanhoLista() > 0) {
+			
 			System.out.println("Digite o ID da pessoa que deseja alterar:");
 			PessoaCollection.listarNomeId();
 
@@ -450,6 +452,8 @@ public class Menu implements Input {
 				System.out.println("Digite o identificador:");
 				int identificador = s.nextInt();
 				((Atendente) p).setIdentificador(identificador);
+				
+				System.out.println("Atendente modificado com sucesso!");
 
 				voltar(opcaoAnterior);
 
@@ -489,12 +493,20 @@ public class Menu implements Input {
 				System.out.println("Qual o curso?");
 				String curso = s.next();
 				((Usuario) p).setCurso(curso);
+				
+				System.out.println("Usuário Modificado com sucesso!");
 
 				voltar(opcaoAnterior);
 
 				break;
 			}
+			
+			}
 
+			} else if (PessoaCollection.tamanhoLista() == 0) {
+				System.out.println("Desculpe, não existem pessoas cadastradas!");
+				voltar(opcaoAnterior);
+				break;
 			}
 
 		}
@@ -503,6 +515,8 @@ public class Menu implements Input {
 
 			// Remover
 
+			if (PessoaCollection.tamanhoLista() > 0) {
+				
 			System.out.println("Digite o ID da pessoa que deseja remover:");
 
 			PessoaCollection.listarNomeId();
@@ -510,10 +524,20 @@ public class Menu implements Input {
 			int id = s.nextInt();
 
 			PessoaCollection.remover(id);
-
+			
 			voltar(opcaoAnterior);
 
 			break;
+			
+			} else {
+				
+				System.out.println("Desculpe, não existem pessoas cadastradas!");
+				
+				voltar(opcaoAnterior);
+				
+				break;
+			}
+			
 
 		}
 
