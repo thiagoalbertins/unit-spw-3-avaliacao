@@ -525,6 +525,8 @@ public class Menu implements Input {
 
 			PessoaCollection.remover(id);
 			
+			System.out.println("Pessoa removida com sucesso!");
+			
 			voltar(opcaoAnterior);
 
 			break;
