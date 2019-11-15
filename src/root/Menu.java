@@ -356,6 +356,8 @@ public class Menu implements Input {
 
 		}
 
+		// Remover Acervo
+		
 		case "4": {
 
 			if (AcervoCollection.getTamanhoAcervo() > 0) {
@@ -372,6 +374,7 @@ public class Menu implements Input {
 				AcervoCollection.procurarAcervo(codigo);
 				AcervoCollection.removerAcervo(AcervoCollection.retornoIndividual(codigo));
 
+				System.out.println("Acervo removido com sucesso!");
 				voltar(opcaoAnterior);
 
 				break;

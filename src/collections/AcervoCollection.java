@@ -114,7 +114,6 @@ public class AcervoCollection {
 
 	public static void removerAcervo(Acervo a) {		
 		acervo.remove(a);
-		System.out.println("Removido com sucesso!");
 	}
 
 }

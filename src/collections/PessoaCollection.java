@@ -28,21 +28,19 @@ public class PessoaCollection implements Crud {
 	}
 
 	// Métodos de consulta
-	
+
 	public static void listarNomeId() {
 
 		String tipoDePessoa = "";
 		for (int i = 0; i < tamanhoLista(); i++) {
 			if (pessoas.get(i).getTipo() == 1) {
 				tipoDePessoa = "Atendente";
-			}
-			else if (pessoas.get(i).getTipo() == 2) {
+			} else if (pessoas.get(i).getTipo() == 2) {
 				tipoDePessoa = " Usuário ";
 			}
-			System.out.println("ID: " + pessoas.get(i).getId() + " || " + tipoDePessoa + " || Nome: " + pessoas.get(i).getNome()
-					+ ", CPF: " + pessoas.get(i).getCpf()
-					+ ", Telefone: " + pessoas.get(i).getFone()
-					+ ", Email: " + pessoas.get(i).getEmail());
+			System.out.println("ID: " + pessoas.get(i).getId() + " || " + tipoDePessoa + " || Nome: "
+					+ pessoas.get(i).getNome() + ", CPF: " + pessoas.get(i).getCpf() + ", Telefone: "
+					+ pessoas.get(i).getFone() + ", Email: " + pessoas.get(i).getEmail());
 
 		}
 	}
@@ -76,14 +74,14 @@ public class PessoaCollection implements Crud {
 		return null;
 
 	}
-	
+
 	public static void listarPessoas(int tipo) {
-		
-		for (int i=0; i < pessoas.size(); i++) {
-			if(pessoas.get(i).getTipo()==2) {
-				System.out.println("Id: "+pessoas.get(i).getId()+", Nome: "+pessoas.get(i).getNome());
+
+		for (int i = 0; i < pessoas.size(); i++) {
+			if (pessoas.get(i).getTipo() == tipo) {
+				System.out.println("Id: " + pessoas.get(i).getId() + ", Nome: " + pessoas.get(i).getNome());
 			}
 		}
-		
+
 	}
 }
