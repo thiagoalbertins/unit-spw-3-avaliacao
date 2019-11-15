@@ -14,9 +14,8 @@ public class Emprestimo {
 	private Usuario usuario;
 	private Acervo acervo;
 	private String status;
-	@SuppressWarnings("unused")
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-	private Date data = new Date();
+	private Date data;
 	private Calendar cal = Calendar.getInstance();
 //	private String data = sdf.format(hoje);
 	private Date dataParaDevolucao;
@@ -27,6 +26,7 @@ public class Emprestimo {
 		this.usuario = usuario;
 		this.acervo = acervo;
 		this.status = status;
+		this.data = new Date();
 		cal.setTime(data);
 		cal.add(Calendar.DAY_OF_MONTH, 7);
 		this.dataParaDevolucao = cal.getTime();
@@ -34,6 +34,14 @@ public class Emprestimo {
 
 	// Getters and Setters
 	
+	public SimpleDateFormat getSdf() {
+		return sdf;
+	}
+
+	public void setSdf(SimpleDateFormat sdf) {
+		this.sdf = sdf;
+	}
+
 	public Date getDataParaDevolucao() {
 		return dataParaDevolucao;
 	}

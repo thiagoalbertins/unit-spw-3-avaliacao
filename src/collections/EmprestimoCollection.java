@@ -16,10 +16,11 @@ public class EmprestimoCollection {
 	public static void listarEmprestimo() {
 		for (int i = 0; i < emprestimos.size(); i++) {
 			System.out.println(
-					  " ||Usuário:" + emprestimos.get(i).getUsuario().getNome() 
-					+ " ||Código do acervo: " + emprestimos.get(i).getAcervo().getCodigo() 
-					+ " ||Data de emprestimos: " + emprestimos.get(i).getData() 
-					+ " ||Status do emprestimos: " + emprestimos.get(i).getStatus());
+					  " || Usuário:" + emprestimos.get(i).getUsuario().getNome() 
+					+ " || Código do acervo: " + emprestimos.get(i).getAcervo().getCodigo() 
+					+ " || Data do emprestimo: " + emprestimos.get(i).getSdf().format(emprestimos.get(i).getData()) 
+					+ " || Data de Devolução: " + emprestimos.get(i).getSdf().format(emprestimos.get(i).getDataParaDevolucao())
+					+ " || Status: " + emprestimos.get(i).getStatus());
 		}
 	}
 
