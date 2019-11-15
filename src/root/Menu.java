@@ -15,7 +15,8 @@ public class Menu implements Input {
 	// 1-1 Cadastro no acervo ok!
 	// 1-2 Listar do acervo ok!
 	// 1-3 Atualizar acervo ok!
-	// 1-4 Deletar do acervo ok! poderia implementar opção de confirmação de deleção ou de voltar enquanto escolhe item a ser deletado
+	// 1-4 Deletar do acervo ok! poderia implementar opção de confirmação de deleção
+	// ou de voltar enquanto escolhe item a ser deletado
 	// 2-Pessoas
 	// 2-1 Cadastro pessoas ok!
 	// 2-2 Listar pessoas ok!
@@ -90,71 +91,83 @@ public class Menu implements Input {
 
 		case "1": {
 
-			// Status
+			// condicional caso não existam pessoas ou acervo cadastrados
 
-			String status = "aberto";
+			if ((PessoaCollection.tamanhoLista() > 0) && (AcervoCollection.getTamanhoAcervo() > 0)) {
 
-			// Obtendo o usuário que vai pegar emprestado
-			System.out.println("Escolha o ID do usuário:");
+				// Status
 
-			PessoaCollection.listarPessoas(2);
+				String status = "aberto";
 
-			int id = s.nextInt();
+				// Obtendo o usuário que vai pegar emprestado
+				System.out.println("Escolha o ID do usuário:");
 
-			Usuario u = (Usuario) PessoaCollection.buscaIndividual(id);
+				PessoaCollection.listarPessoas(2);
 
-			// Obtendo o item que vai ser emprestado
-			System.out.println("Qual o tipo de item?");
-			System.out.println("\n 1 - Jornal" + "\n 2 - Livro" + "\n 3 - Revista" + "\n\n [v] - Voltar");
+				int id = s.nextInt();
 
-			int tipoEmprestimo = s.nextInt();
+				Usuario u = (Usuario) PessoaCollection.buscaIndividual(id);
 
-			switch (tipoEmprestimo) {
+				// Obtendo o item que vai ser emprestado
 
-			case 1: {
-				// Listar jornais
-				System.out.println("Jornais disponíveis:");
-				AcervoCollection.listarAcervo(1);
+				System.out.println("Qual o tipo de item?");
+				System.out.println("\n 1 - Jornal" + "\n 2 - Livro" + "\n 3 - Revista" + "\n\n [v] - Voltar");
 
-				int escolhido = s.nextInt();
-				Acervo a = AcervoCollection.retornoIndividual(escolhido);
+				int tipoEmprestimo = s.nextInt();
 
-				Emprestimo e = new Emprestimo(u, a, status);
-				
-				EmprestimoCollection.registrarEmprestimo(e);
+				switch (tipoEmprestimo) {
 
-				break;
+				case 1: {
+					// Listar jornais
+					System.out.println("Jornais disponíveis:");
+					AcervoCollection.listarAcervo(1);
 
-			}
-			case 2: {
-				// Listar livros
-				System.out.println("Livros disponíveis:");
-				AcervoCollection.listarAcervo(2);
+					int escolhido = s.nextInt();
+					Acervo a = AcervoCollection.retornoIndividual(escolhido);
 
-				int escolhido = s.nextInt();
-				Acervo a = AcervoCollection.retornoIndividual(escolhido);
+					Emprestimo e = new Emprestimo(u, a, status);
 
-				Emprestimo e = new Emprestimo(u, a, status);
-				
-				EmprestimoCollection.registrarEmprestimo(e);
+					EmprestimoCollection.registrarEmprestimo(e);
 
-				break;
-			}
-			case 3: {
-				// Listar revistas
-				System.out.println("Revistas disponíveis:");
-				AcervoCollection.listarAcervo(3);
+					break;
 
-				int escolhido = s.nextInt();
-				Acervo a = AcervoCollection.retornoIndividual(escolhido);
+				}
+				case 2: {
+					// Listar livros
+					System.out.println("Livros disponíveis:");
+					AcervoCollection.listarAcervo(2);
 
-				Emprestimo e = new Emprestimo(u, a, status);
-				
-				EmprestimoCollection.registrarEmprestimo(e);
+					int escolhido = s.nextInt();
+					Acervo a = AcervoCollection.retornoIndividual(escolhido);
 
-				break;
-			}
+					Emprestimo e = new Emprestimo(u, a, status);
 
+					EmprestimoCollection.registrarEmprestimo(e);
+
+					break;
+				}
+				case 3: {
+					// Listar revistas
+					System.out.println("Revistas disponíveis:");
+					AcervoCollection.listarAcervo(3);
+
+					int escolhido = s.nextInt();
+					Acervo a = AcervoCollection.retornoIndividual(escolhido);
+
+					Emprestimo e = new Emprestimo(u, a, status);
+
+					EmprestimoCollection.registrarEmprestimo(e);
+
+					break;
+				}
+
+				}
+
+			} else {
+
+				System.out.println(
+						"Por favor, cadastre pelo menos um usuário e um acervo antes de usar o sistema de empréstimo!");
+				voltar(opcaoAnterior);
 			}
 
 		}
@@ -163,12 +176,20 @@ public class Menu implements Input {
 
 		}
 
-		case "3": {
+		case "3": { // implementar lista
 
+			EmprestimoCollection.listarEmprestimo();
+			break;
 		}
 
 		case "v": {
 
+			if (opcaoAnterior == "0") {
+				opcao = "0";
+			}
+
+			renderizar(opcao, opcaoAnterior);
+			break;
 		}
 
 		}
@@ -334,29 +355,27 @@ public class Menu implements Input {
 		case "4": {
 
 			if (AcervoCollection.getTamanhoAcervo() > 0) {
-				
-			System.out.println("Selecione o registro que deseja remover: ");
-			
-			AcervoCollection.listarAcervo(1);
-			AcervoCollection.listarAcervo(2);
-			AcervoCollection.listarAcervo(3);
-			
-			int codigo = s.nextInt();
-			
-			System.out.println("Removendo o seguinte registro: ");
-			AcervoCollection.procurarAcervo(codigo);
-			AcervoCollection.removerAcervo(AcervoCollection.retornoIndividual(codigo));
 
-			voltar(opcaoAnterior);
+				System.out.println("Selecione o registro que deseja remover: ");
 
-			break;
-			}
-			else {
+				AcervoCollection.listarAcervo(1);
+				AcervoCollection.listarAcervo(2);
+				AcervoCollection.listarAcervo(3);
+
+				int codigo = s.nextInt();
+
+				System.out.println("Removendo o seguinte registro: ");
+				AcervoCollection.procurarAcervo(codigo);
+				AcervoCollection.removerAcervo(AcervoCollection.retornoIndividual(codigo));
+
+				voltar(opcaoAnterior);
+
+				break;
+			} else {
 				System.out.println("Desculpe, não existe acervo cadastrado.");
 				voltar(opcaoAnterior);
 				break;
 			}
-
 
 		}
 
@@ -400,11 +419,10 @@ public class Menu implements Input {
 				voltar(opcaoAnterior);
 				break;
 			} else {
-			PessoaCollection.listarNomeId();
-			voltar(opcaoAnterior);
-			break;
+				PessoaCollection.listarNomeId();
+				voltar(opcaoAnterior);
+				break;
 			}
-
 
 		}
 
@@ -413,95 +431,95 @@ public class Menu implements Input {
 			// Atualizar pessoas
 
 			if (PessoaCollection.tamanhoLista() > 0) {
-			
-			System.out.println("Digite o ID da pessoa que deseja alterar:");
-			PessoaCollection.listarNomeId();
 
-			int id = s.nextInt();
+				System.out.println("Digite o ID da pessoa que deseja alterar:");
+				PessoaCollection.listarNomeId();
 
-			Pessoa p = PessoaCollection.buscaIndividual(id);
+				int id = s.nextInt();
 
-			switch (p.getTipo()) {
+				Pessoa p = PessoaCollection.buscaIndividual(id);
 
-			case 1: {
+				switch (p.getTipo()) {
 
-				System.out.println("Digite o nome da pessoa:");
-				String nome = s.next();
-				p.setNome(nome);
+				case 1: {
 
-				System.out.println("Digite o CPF:");
-				String cpf = s.next();
-				p.setCpf(cpf);
+					System.out.println("Digite o nome da pessoa:");
+					String nome = s.next();
+					p.setNome(nome);
 
-				System.out.println("Digite o telefone:");
-				String fone = s.next();
-				p.setFone(fone);
+					System.out.println("Digite o CPF:");
+					String cpf = s.next();
+					p.setCpf(cpf);
 
-				System.out.println("Digite o endereço:");
-				String endereco = s.next();
-				p.setEndereco(endereco);
+					System.out.println("Digite o telefone:");
+					String fone = s.next();
+					p.setFone(fone);
 
-				System.out.println("Digite o CEP:");
-				String cep = s.next();
-				p.setCep(cep);
+					System.out.println("Digite o endereço:");
+					String endereco = s.next();
+					p.setEndereco(endereco);
 
-				System.out.println("Digite o e-mail:");
-				String email = s.next();
-				p.setEmail(email);
+					System.out.println("Digite o CEP:");
+					String cep = s.next();
+					p.setCep(cep);
 
-				System.out.println("Digite o identificador:");
-				int identificador = s.nextInt();
-				((Atendente) p).setIdentificador(identificador);
-				
-				System.out.println("Atendente modificado com sucesso!");
+					System.out.println("Digite o e-mail:");
+					String email = s.next();
+					p.setEmail(email);
 
-				voltar(opcaoAnterior);
+					System.out.println("Digite o identificador:");
+					int identificador = s.nextInt();
+					((Atendente) p).setIdentificador(identificador);
 
-				break;
-			}
+					System.out.println("Atendente modificado com sucesso!");
 
-			case 2: {
+					voltar(opcaoAnterior);
 
-				System.out.println("Digite o nome do usuário:");
-				String nome = s.next();
-				p.setNome(nome);
+					break;
+				}
 
-				System.out.println("Digite o CPF do usuário:");
-				String cpf = s.next();
-				p.setCpf(cpf);
+				case 2: {
 
-				System.out.println("Digite o telefone do usuário:");
-				String fone = s.next();
-				p.setFone(fone);
+					System.out.println("Digite o nome do usuário:");
+					String nome = s.next();
+					p.setNome(nome);
 
-				System.out.println("Digite o endereço do usuário:");
-				String endereco = s.next();
-				p.setEndereco(endereco);
+					System.out.println("Digite o CPF do usuário:");
+					String cpf = s.next();
+					p.setCpf(cpf);
 
-				System.out.println("Qual o CEP?");
-				String cep = s.next();
-				p.setCep(cep);
+					System.out.println("Digite o telefone do usuário:");
+					String fone = s.next();
+					p.setFone(fone);
 
-				System.out.println("E-mail:");
-				String email = s.next();
-				p.setEmail(email);
+					System.out.println("Digite o endereço do usuário:");
+					String endereco = s.next();
+					p.setEndereco(endereco);
 
-				System.out.println("Matricula:");
-				String matricula = s.next();
-				((Usuario) p).setMatricula(matricula);
+					System.out.println("Qual o CEP?");
+					String cep = s.next();
+					p.setCep(cep);
 
-				System.out.println("Qual o curso?");
-				String curso = s.next();
-				((Usuario) p).setCurso(curso);
-				
-				System.out.println("Usuário Modificado com sucesso!");
+					System.out.println("E-mail:");
+					String email = s.next();
+					p.setEmail(email);
 
-				voltar(opcaoAnterior);
+					System.out.println("Matricula:");
+					String matricula = s.next();
+					((Usuario) p).setMatricula(matricula);
 
-				break;
-			}
-			
-			}
+					System.out.println("Qual o curso?");
+					String curso = s.next();
+					((Usuario) p).setCurso(curso);
+
+					System.out.println("Usuário Modificado com sucesso!");
+
+					voltar(opcaoAnterior);
+
+					break;
+				}
+
+				}
 
 			} else if (PessoaCollection.tamanhoLista() == 0) {
 				System.out.println("Desculpe, não existem pessoas cadastradas!");
@@ -516,30 +534,29 @@ public class Menu implements Input {
 			// Remover
 
 			if (PessoaCollection.tamanhoLista() > 0) {
-				
-			System.out.println("Digite o ID da pessoa que deseja remover:");
 
-			PessoaCollection.listarNomeId();
+				System.out.println("Digite o ID da pessoa que deseja remover:");
 
-			int id = s.nextInt();
+				PessoaCollection.listarNomeId();
 
-			PessoaCollection.remover(id);
-			
-			System.out.println("Pessoa removida com sucesso!");
-			
-			voltar(opcaoAnterior);
+				int id = s.nextInt();
 
-			break;
-			
-			} else {
-				
-				System.out.println("Desculpe, não existem pessoas cadastradas!");
-				
+				PessoaCollection.remover(id);
+
+				System.out.println("Pessoa removida com sucesso!");
+
 				voltar(opcaoAnterior);
-				
+
+				break;
+
+			} else {
+
+				System.out.println("Desculpe, não existem pessoas cadastradas!");
+
+				voltar(opcaoAnterior);
+
 				break;
 			}
-			
 
 		}
 
