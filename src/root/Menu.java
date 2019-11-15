@@ -205,7 +205,7 @@ public class Menu implements Input {
 
 				int emprestimoDevolucao = s.nextInt();
 
-				EmprestimoCollection.devolução(EmprestimoCollection.buscarEmprestimo(emprestimoDevolucao));
+				EmprestimoCollection.devolucao(EmprestimoCollection.buscarEmprestimo(emprestimoDevolucao));
 				
 				System.out.println("Devolvido com sucesso!");
 				

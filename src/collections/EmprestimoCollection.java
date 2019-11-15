@@ -25,7 +25,7 @@ public class EmprestimoCollection {
 		}
 	}
 
-	public static void devolução(Emprestimo e) {
+	public static void devolucao(Emprestimo e) {
 		emprestimos.remove(e);
 	}
 	
