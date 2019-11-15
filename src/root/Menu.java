@@ -249,10 +249,12 @@ public class Menu implements Input {
 				int numeroPaginas = s.nextInt();
 
 				System.out.println("Volume: ");
-				String volume = s.next();
+				String volume = s.nextLine();
+				volume = s.nextLine();
 
 				System.out.println("Nome do jornal: ");
-				String nomeJornal = s.next();
+
+				String nomeJornal = s.nextLine();
 
 				Jornal j = new Jornal(anoPublicacao, numeroPaginas, volume, nomeJornal);
 
@@ -278,19 +280,21 @@ public class Menu implements Input {
 				int codigoAutor = s.nextInt();
 
 				System.out.println("Nome do autor: ");
-				String nomeAutor = s.next();
+				String nomeAutor = s.nextLine();
+				nomeAutor = s.nextLine();
 
 				System.out.println("Edição: ");
 				int edicao = s.nextInt();
 
 				System.out.println("Titulo do livro: ");
-				String titulo = s.next();
+				String titulo = s.nextLine();
+				titulo = s.nextLine();
 
 				System.out.println("Editora: ");
-				String editora = s.next();
+				String editora = s.nextLine();
 
 				System.out.println("ISBN: ");
-				String isbn = s.next();
+				String isbn = s.nextLine();
 
 				Livro l = new Livro(anoPublicacao, numeroPaginas, volume, codigoAutor, edicao, nomeAutor, titulo,
 						editora, isbn);
@@ -310,11 +314,13 @@ public class Menu implements Input {
 				System.out.println("Número de páginas: ");
 				int numeroPaginas = s.nextInt();
 				System.out.println("Volume: ");
-				String volume = s.next();
+				String volume = s.nextLine();
+				volume = s.nextLine();
 				System.out.println("Número da edição: ");
 				int edicao = s.nextInt();
 				System.out.println("Nome da revista: ");
-				String nomeRevista = s.next();
+				String nomeRevista = s.nextLine();
+				nomeRevista = s.nextLine();
 
 				Revista r = new Revista(anoPublicacao, numeroPaginas, volume, edicao, nomeRevista);
 
