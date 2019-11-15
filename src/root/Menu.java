@@ -133,6 +133,10 @@ public class Menu implements Input {
 
 					EmprestimoCollection.registrarEmprestimo(e);
 
+					System.out.println("Empréstimo registrado!");
+					
+					voltar(opcaoAnterior);
+
 					break;
 
 				}
@@ -149,6 +153,10 @@ public class Menu implements Input {
 
 					EmprestimoCollection.registrarEmprestimo(e);
 
+					System.out.println("Empréstimo registrado!");
+					
+					voltar(opcaoAnterior);
+
 					break;
 				}
 				case 3: {
@@ -164,6 +172,10 @@ public class Menu implements Input {
 
 					EmprestimoCollection.registrarEmprestimo(e);
 
+					System.out.println("Empréstimo registrado!");
+					
+					voltar(opcaoAnterior);
+
 					break;
 				}
 
@@ -174,7 +186,11 @@ public class Menu implements Input {
 				System.out.println(
 						"Por favor, cadastre pelo menos um usuário e um acervo antes de usar o sistema de empréstimo!");
 				voltar(opcaoAnterior);
+
+				break;
 			}
+
+			break;
 
 		}
 
@@ -182,26 +198,35 @@ public class Menu implements Input {
 
 			if (EmprestimoCollection.tamanhoLista() > 0) {
 
-				//Registrar devolução;
+				// Registrar devolução;
+
+				System.out.println("Selecione o empréstimo:\n");
+				EmprestimoCollection.listarEmprestimo();
+
+				int emprestimoDevolucao = s.nextInt();
+
+				EmprestimoCollection.devolução(EmprestimoCollection.buscarEmprestimo(emprestimoDevolucao));
 				
-				System.out.println("Selecione o empréstimo:");
+				System.out.println("Devolvido com sucesso!");
 				
-				
+				voltar(opcaoAnterior);
+
+				break;
 
 			} else {
 
 				System.out.println("Não existem empréstimos cadastrados!");
 				voltar(opcaoAnterior);
+				break;
 
 			}
 
-			break;
-
 		}
 
-		case "3": { // implementar lista
+		case "3": {
 
 			EmprestimoCollection.listarEmprestimo();
+			voltar(opcaoAnterior);
 			break;
 		}
 
@@ -333,6 +358,8 @@ public class Menu implements Input {
 			}
 
 			}
+
+			break;
 		}
 
 		// Listar itens do acervo
