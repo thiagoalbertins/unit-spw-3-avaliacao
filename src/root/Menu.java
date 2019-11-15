@@ -15,13 +15,16 @@ public class Menu implements Input {
 	// 1-1 Cadastro no acervo ok!
 	// 1-2 Listar do acervo ok!
 	// 1-3 Atualizar acervo ok!
-	// 1-4 Deletar do acervo ok! poderia implementar opção de confirmação de deleção
-	// ou de voltar enquanto escolhe item a ser deletado
-	// 2-Pessoas
+	// 1-4 Deletar do acervo ok!
+	// 2-Pessoas ok!
 	// 2-1 Cadastro pessoas ok!
 	// 2-2 Listar pessoas ok!
 	// 2-3 Atualizar pessoas ok!
 	// 2-4 Deletar pessoas ok!
+	// 3-Emprestimo
+	// 3-1 Registrar empréstimo ok!
+	// 3-2 Registrar devolução
+	// 3-3 Listas todos os empréstimos
 
 	// Render -> Método público responsável por renderizar os menus
 
@@ -147,6 +150,7 @@ public class Menu implements Input {
 					break;
 				}
 				case 3: {
+
 					// Listar revistas
 					System.out.println("Revistas disponíveis:");
 					AcervoCollection.listarAcervo(3);
