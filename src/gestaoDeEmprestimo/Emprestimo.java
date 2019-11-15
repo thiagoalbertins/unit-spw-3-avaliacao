@@ -3,8 +3,6 @@ package gestaoDeEmprestimo;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-
-import collections.EmprestimoCollection;
 import gestaoDePessoa.Usuario;
 import gestaoDeAcervo.Acervo;
 
