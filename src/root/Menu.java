@@ -1,5 +1,10 @@
 package root;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import collections.*;
 import gestaoDeAcervo.*;
 import gestaoDeEmprestimo.Emprestimo;
@@ -206,6 +211,26 @@ public class Menu implements Input {
 				int emprestimoDevolucao = s.nextInt();
 
 				EmprestimoCollection.devolucao(EmprestimoCollection.buscarEmprestimo(emprestimoDevolucao));
+				
+				System.out.println("Digite a data de devolução:");
+				
+				String dataDevolucao = s.next();
+								
+				try {
+					Date df = new SimpleDateFormat("dd/MM/yyyy").parse(dataDevolucao);
+					long dias = df.compareTo(EmprestimoCollection.buscarEmprestimo(emprestimoDevolucao).getDataParaDevolucao());
+					long multa = dias*2;
+					
+					if (multa>0) {
+						System.out.println("Este empréstimo foi devolvido com " + dias + " dias de atraso. Por isso, gerou uma multa de: "+multa+" reais.");
+					} else {
+						System.out.println("Esse empréstimo foi devolvido dentro do prazo e não gerou multa! :)");
+					}
+					
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+				
 				
 				System.out.println("Devolvido com sucesso!");
 				
