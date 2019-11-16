@@ -18,6 +18,7 @@ public class Emprestimo {
 //	private String data = sdf.format(hoje);
 	private Date dataParaDevolucao;
 	private Date dataDevolvido;
+	private static final double MULTA_POR_DIA = 2;
 	
 	// Construtor
 	public Emprestimo(Usuario usuario, Acervo acervo, String status) {
