@@ -207,8 +207,6 @@ public class Menu implements Input {
 
 				EmprestimoCollection.devolucao(EmprestimoCollection.buscarEmprestimo(emprestimoDevolucao));
 				
-				System.out.println("Devolvido com sucesso!");
-				
 				voltar(opcaoAnterior);
 
 				break;

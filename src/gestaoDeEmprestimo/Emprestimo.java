@@ -18,8 +18,10 @@ public class Emprestimo {
 //	private String data = sdf.format(hoje);
 	private Date dataParaDevolucao;
 	private Date dataDevolvido;
-	private static final double MULTA_POR_DIA = 2;
+	private final double multaPorDia = 2;
+	private double multa;
 	
+
 	// Construtor
 	public Emprestimo(Usuario usuario, Acervo acervo, String status) {
 		this.usuario = usuario;
@@ -33,6 +35,18 @@ public class Emprestimo {
 
 	// Getters and Setters
 	
+	public double getMulta() {
+		return multa;
+	}
+
+	public void setMulta(double multa) {
+		this.multa = multa;
+	}
+
+	public double getMultaPorDia() {
+		return multaPorDia;
+	}
+
 	public SimpleDateFormat getSdf() {
 		return sdf;
 	}
