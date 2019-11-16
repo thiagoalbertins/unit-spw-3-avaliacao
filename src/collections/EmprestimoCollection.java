@@ -54,11 +54,11 @@ public class EmprestimoCollection {
 			System.out.printf("Devolvido com sucesso!%nMulta a ser paga: R$ %.2f", e.getMulta());
 		} else if (numeroDias <= 7) {
 			if (e.getAcervo().getTipo() == 1) {
-				System.out.println("Jornal devolvido com sucesso!");
+				System.out.println("Jornal devolvido com sucesso! Sem multa a pagar!");
 			} else if (e.getAcervo().getTipo() == 2) {
-				System.out.println("Livro devolvido com sucesso!");
+				System.out.println("Livro devolvido com sucesso! Sem multa a pagar!");
 			} else if (e.getAcervo().getTipo() == 3) {
-				System.out.println("Revista devolvida com sucesso!");
+				System.out.println("Revista devolvida com sucesso! Sem multa a pagar!");
 			}
 
 		}
